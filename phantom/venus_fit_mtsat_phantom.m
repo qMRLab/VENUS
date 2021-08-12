@@ -20,7 +20,7 @@ function venus_fit_mtsat_phantom(bidsFolder)
         t1w = [filesep pth cursid '_flip-02_mt-off_MTS'];
         % Use unfiltered B1 maps for phantom data, disconts exist due to phantom and 
         % smoothing messes up the data.
-        b1map = [bidsFolder filesep 'derivatives/ANTs/sub-phantom/fmap/' 'ses-' sessions{ii} filesep cursid '_desc-resampled_TB1map'];
+        b1map = [bidsFolder filesep 'derivatives/ANTs/sub-phantom/' 'ses-' sessions{ii} filesep 'fmap' filesep cursid '_desc-resampled_TB1map'];
         
         Model = mt_sat;
         data = struct();

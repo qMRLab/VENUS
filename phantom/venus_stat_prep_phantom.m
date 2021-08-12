@@ -4,9 +4,9 @@ function venus_stat_prep_phantom(bidsFolder)
 % export them elsewhere for interactive analysis.
 
     % Create a stat folder under derivatives/qMRLab
-    statDir = [bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom' filesep 'stat'];
-    if ~exist(statDir) == 7 
-        mkdir(statDir)
+    derivativeDir = [bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom'];
+    if ~exist(derivativeDir) == 7 
+        mkdir(derivativeDir)
     end
 
     sessions = {'rth750retest','rth750test','rthPRIretest','rthPRItest','rthSKYretest','rthSKYtest',...
@@ -22,26 +22,26 @@ function venus_stat_prep_phantom(bidsFolder)
     % Get masked values 
     for ii = 1:length(sessions)
         
-        curStatDir = [statDir filesep 'ses-' sessions{ii}];
+        curStatDir = [derivativeDir filesep 'ses-' sessions{ii} filesep 'stat'];
         mkdir(curStatDir);
 
-        curLabel = double(load_nii_data([bidsFolder filesep 'derivatives' filesep '3DSlicer' filesep 'sub-phantom' filesep 'anat' filesep 'ses-' sessions{ii} filesep 'sub-phantom_ses-' sessions{ii} '_labels.nii.gz']));
-        curT1 = double(load_nii_data([bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom' filesep 'anat' filesep 'ses-' sessions{ii} filesep 'sub-phantom_ses-' sessions{ii} '_T1map.nii.gz']));
+        curLabel = double(load_nii_data([bidsFolder filesep 'derivatives' filesep '3DSlicer' filesep 'sub-phantom' filesep 'ses-' sessions{ii} filesep 'anat' filesep 'sub-phantom_ses-' sessions{ii} '_labels.nii.gz']));
+        curT1 = double(load_nii_data([bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom' filesep 'ses-' sessions{ii} filesep 'anat' filesep 'sub-phantom_ses-' sessions{ii} '_T1map.nii.gz']));
         
-        if exist([bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom' filesep 'anat' filesep 'ses-' sessions{ii} filesep 'sub-phantom_ses-' sessions{ii} '_desc-b1corrected_T1map.nii.gz']) == 2 
-            curT1cor = double(load_nii_data([bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom' filesep 'anat' filesep 'ses-' sessions{ii} filesep 'sub-phantom_ses-' sessions{ii} '_desc-b1corrected_T1map.nii.gz']));
+        if exist([bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom'  filesep 'ses-' sessions{ii} filesep 'anat' filesep 'sub-phantom_ses-' sessions{ii} '_desc-b1corrected_T1map.nii.gz']) == 2 
+            curT1cor = double(load_nii_data([bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom' filesep 'ses-' sessions{ii} filesep 'anat' filesep 'sub-phantom_ses-' sessions{ii} '_desc-b1corrected_T1map.nii.gz']));
         else
             curT1cor = [];
         end
 
-        if exist([bidsFolder filesep 'derivatives' filesep 'ANTs' filesep 'sub-phantom' filesep 'fmap' filesep 'ses-' sessions{ii} filesep 'sub-phantom_ses-' sessions{ii} '_desc-resampled_TB1map.nii.gz'])==2
-            curB1 = double(load_nii_data([bidsFolder filesep 'derivatives' filesep 'ANTs' filesep 'sub-phantom' filesep 'fmap' filesep 'ses-' sessions{ii} filesep 'sub-phantom_ses-' sessions{ii} '_desc-resampled_TB1map.nii.gz']));
+        if exist([bidsFolder filesep 'derivatives' filesep 'ANTs' filesep 'sub-phantom' filesep 'ses-' sessions{ii} filesep 'fmap' filesep 'sub-phantom_ses-' sessions{ii} '_desc-resampled_TB1map.nii.gz'])==2
+            curB1 = double(load_nii_data([bidsFolder filesep 'derivatives' filesep 'ANTs' filesep 'sub-phantom' filesep 'ses-' sessions{ii} filesep 'fmap' filesep 'sub-phantom_ses-' sessions{ii} '_desc-resampled_TB1map.nii.gz']));
         else
             curB1 = [];
         end
 
 
-        curMTS = double(load_nii_data([bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom' filesep 'anat' filesep 'ses-' sessions{ii} filesep 'sub-phantom_ses-' sessions{ii} '_MTsat.nii.gz']));
+        curMTS = double(load_nii_data([bidsFolder filesep 'derivatives' filesep 'qMRLab' filesep 'sub-phantom' filesep 'ses-' sessions{ii} filesep 'anat' filesep 'sub-phantom_ses-' sessions{ii} '_MTsat.nii.gz']));
         
         for jj =1:10
         csvData(it,1) = sessions(ii);
@@ -88,7 +88,7 @@ function venus_stat_prep_phantom(bidsFolder)
     end
 
     csvData = [cHeader;csvData];
-    cell2csv([statDir 'venus_phantom_stat_summary.csv'],csvData,',');
+    cell2csv([derivativeDir filesep 'venus_phantom_stat_summary.csv'],csvData,',');
 
 end
 

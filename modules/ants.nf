@@ -58,14 +58,14 @@ process resampleB1 {
         tuple val(sid), file(t1w), file(b1raw)
         
     output:
-        tuple val(sid), path("${sid}_B1plusmap_aligned.nii.gz"), optional: true, \
+        tuple val(sid), path("${sid}_desc-resampled_TB1map.nii.gz"), optional: true, \
         emit: b1_resampled
 
     script:
         """
         antsApplyTransforms -d 3 -e 0 -i $b1raw \
                             -r $t1w \
-                            -o ${sid}_B1plusmap_aligned.nii.gz \
+                            -o ${sid}_desc-resampled_TB1map.nii.gz \
                             -t identity
         """
 

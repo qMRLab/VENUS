@@ -95,7 +95,7 @@ if(params.bids){
 
 
 Channel
-    .fromFilePairs("$bids/${entity.dirInputLevel}sub-invivo*_flip-{01,02}_mt-{on,off}_MTS.nii.gz", maxDepth: 3, size: 3, flat: true)
+    .fromFilePairs("$bids/${entity.dirInputLevel}sub-invivo*_flip-{01,02}_mt-{on,off}_MTS.nii*", maxDepth: 3, size: 3, flat: true)
     .multiMap {sid, MToff, MTon, T1w ->
     PDw: tuple(sid, MToff)
     MTw: tuple(sid, MTon)
@@ -147,6 +147,17 @@ PDw.Nii
     .join(T1w.Nii)
     .set{mtsat_for_alignment}
 
+Channel
+        .fromFilePairs("$bids/derivatives/qMRLab/**/**/fmap/sub-invivo*_TB1map.nii.gz", maxDepth:3, size:1, flat:true)
+        .multiMap { it -> AngleMap: it }
+        .set {B1}
+
+T1w.Nii
+    .join(B1.AngleMap)
+    .set{b1_for_alignment}
+    
+
+
 process publishOutputs {
 
     exec:
@@ -165,7 +176,27 @@ process publishOutputs {
     script:
         """
         mkdir -p ${derivativesDir}
-        echo "Transferring ${mtw_aligned} to ${derivativesDir}/${out.sub}/${out.ses}anat folder..."
+        """
+}
+
+process publishFmapOutputs {
+
+    exec:
+        out = getSubSesEntity("${sid}")
+
+    input:
+      tuple val(sid), \
+      path(b1_resampled)
+
+    publishDir "${derivativesDir}/${out.sub}/${out.ses}fmap", mode: 'copy', overwrite: true
+
+    output:
+      tuple val(sid), \
+      path(b1_resampled)
+
+    script:
+        """
+        mkdir -p ${derivativesDir}
         """
 }
 
@@ -175,6 +206,9 @@ workflow {
 
 alignMtsatInputs(mtsat_for_alignment)
 publishOutputs(alignMtsatInputs.out.mtsat_from_alignment)
+
+resampleB1(b1_for_alignment)
+publishFmapOutputs(resampleB1.out.b1_resampled)
 
 }
 
