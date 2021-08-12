@@ -1,0 +1,12 @@
+// Container: qMRLab/anstfsl
+
+// RTHawk (nii.gz)
+mkdir -p /tmp/derivatives/ANTs/sub-phantom/fmap/ses-xxx
+antsApplyTransforms -d 3 -e 0 -i $PWD/derivatives/qMRLab/sub-phantom/fmap/ses-xxx/sub-phantom_ses-xxx_TB1map.nii.gz -r $PWD/sub-phantom/ses-xxx/anat/sub-phantom_ses-xxx_flip-02_mt-off_MTS.nii.gz -o $PWD/derivatives/ANTs/sub-phantom/fmap/ses-xxx/sub-phantom_ses-xxx_desc-resampled_TB1map2.nii.gz -t identity
+
+
+
+
+// VENDOR (nii)
+mkdir -p /tmp/derivatives/ANTs/sub-phantom/fmap/ses-yyy
+antsApplyTransforms -d 3 -e 0 -i $PWD/derivatives/qMRLab/sub-phantom/fmap/ses-yyy/sub-phantom_ses-yyy_TB1map.nii.gz -r $PWD/sub-phantom/ses-xxx/anat/sub-phantom_ses-yyy_flip-02_mt-off_MTS.nii -o $PWD/derivatives/ANTs/sub-phantom/fmap/ses-xxx/sub-phantom_ses-yyy_desc-resampled_TB1map.nii.gz -t identity
