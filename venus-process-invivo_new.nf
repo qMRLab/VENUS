@@ -4,10 +4,6 @@ include { getSubSesEntity; checkSesFolders } from './modules/bids_patterns'
 params.bids = false 
 params.help = false
 
-/* Call to the mt_sat_wrapper.m will be invoked by params.runcmd.
-Depending on the params.platform selection, params.runcmd 
-may point to MATLAB or Octave. 
-*/
 if (params.platform == "octave"){
 
     if (params.octave_path){
@@ -46,7 +42,6 @@ workflow.onComplete {
 /*Define bindings for --help*/
 if(params.help) {
     usage = file("$baseDir/USAGE")
-
     cpu_count = Runtime.runtime.availableProcessors()
     bindings = ["ants_dim":"$params.ants_dim",
                 "ants_metric":"$params.ants_metric",
@@ -86,7 +81,7 @@ if(params.bids){
     log.info "Nextflow Work Dir: $workflow.workDir"
 
 
-
+// In future releases of qMRLab, the process will be trigerreed by a list of base file names (i.e. noo need to specify nii/json).
 Channel
     .fromFilePairs("$bids/${entity.dirInputLevel}sub-invivo*_flip-{01,02}_mt-{on,off}_MTS.nii*", maxDepth: 3, size: 3, flat: true)
     .multiMap {sid, MToff, MTon, T1w ->
@@ -140,21 +135,6 @@ PDw.Nii
     .join(T1w.Nii)
     .set{mtsat_for_alignment}
 
-Channel
-        .fromFilePairs("$bids/derivatives/qMRLab/**/**/fmap/sub-invivo*_TB1map.nii.gz", maxDepth:3, size:1, flat:true)
-        .multiMap { it -> AngleMap: it }
-        .set {B1}
-
-Channel
-        .fromFilePairs("$bids/derivatives/qMRLab/**/**/fmap/sub-invivo*_desc-resampled_TB1map.nii.gz", maxDepth:3, size:1, flat:true)
-        .multiMap { it -> AngleMap: it }
-        .set {B1res}
-
-T1w.Nii
-    .join(B1.AngleMap)
-    .set{b1_for_alignment}
-    
-
 
 process publishOutputs {
 
@@ -163,13 +143,19 @@ process publishOutputs {
 
     input:
       tuple val(sid), \
-      path(mtw_aligned), path(pdw_aligned), path(gm_mask), path(wm_mask)
+      path(mtw_aligned), path(pdw_aligned), path(pd2t1), path(mt2t1), path(csf), path(gm), path(wm), path(brain), path(log), path(biascorr), \
+      path(t1mapnii),path(t1mapjson),path(mtsatmapnii),path(mtsatmapjson),path(qmrlabmodel), \
+      path(mtrmapnii), path(mtrmapjson), path(mtrmapqmrlab) // , \
+//      path(mni1), path(mni2), path(mni3) Comment in for mni152 alignment 
 
     publishDir "${derivativesDir}/${out.sub}/${out.ses}anat", mode: 'copy', overwrite: true
 
     output:
       tuple val(sid), \
-      path(mtw_aligned), path(pdw_aligned), path(gm_mask), path(wm_mask)
+      path(mtw_aligned), path(pdw_aligned), path(pd2t1), path(mt2t1), path(csf), path(gm), path(wm), path(brain), path(log), path(biascorr), \
+      path(t1mapnii), path(t1mapjson),path(mtsatmapnii),path(mtsatmapjson),path(qmrlabmodel), \
+      path(mtrmapnii), path(mtrmapjson), path(mtrmapqmrlab) // ,\
+//      path(mni1), path(mni2), path(mni3) Comment in for mni152 alignmend
 
     script:
         """
@@ -177,20 +163,20 @@ process publishOutputs {
         """
 }
 
-process publishFmapOutputs {
+process publishStat {
 
     exec:
         out = getSubSesEntity("${sid}")
 
     input:
       tuple val(sid), \
-      path(b1_resampled)
+      path(a), path(b), path(c)
 
-    publishDir "${derivativesDir}/${out.sub}/${out.ses}fmap_res_filtd_octave", mode: 'copy', overwrite: true
+    publishDir "${derivativesDir}/${out.sub}/${out.ses}stat", mode: 'copy', overwrite: true
 
     output:
       tuple val(sid), \
-      path(b1_resampled)
+      path(a), path(b), path(c)
 
     script:
         """
@@ -198,19 +184,105 @@ process publishFmapOutputs {
         """
 }
 
-include { alignMtsatInputs; resampleB1; generateRegionMasks } from './modules/ants'
-include {smoothB1WithoutMask} from './modules/filter_map'
+include { preprocessMtsat; normalizeToMni152; warpMaps} from './modules/ants_new'
+include { fitMtsat } from './modules/mt_sat' addParams(runcmd: params.runcmd)
+include { fitMtratio } from './modules/mt_ratio' addParams(runcmd: params.runcmd)
+include { prepStat } from './modules/statprep' addParams(runcmd: params.runcmd)
+
 workflow {
 
 // NOTE: mtsat_for_alignment is not publishing segmentation outputs with SID so not published
-//alignMtsatInputs(mtsat_for_alignment)
-//publishOutputs(alignMtsatInputs.out.mtsat_from_alignment)
+preprocessMtsat(mtsat_for_alignment)
 
-//resampleB1(b1_for_alignment)
-//publishFmapOutputs(resampleB1.out.b1_resampled)
+Prec = preprocessMtsat.out.mtsat_preprocessed
+        .multiMap { it -> 
+                    MTwAl: tuple(it[0],it[1]) 
+                    PDwAl: tuple(it[0],it[2])
+                    GmMask: tuple(it[0],it[6])
+                    WmMask: tuple(it[0],it[7])
+                    Mask:  tuple(it[0],it[8])
+                    BiasCor:  tuple(it[0],it[10])}
 
-smoothB1WithoutMask(B1res.AngleMap)
-publishFmapOutputs(smoothB1WithoutMask.out.b1_filtered)
+// PDw --> MTw --> T1w order matters
+Prec.PDwAl
+    .join(Prec.MTwAl)
+    .join(T1w.Nii)
+    .join(PDw.Json)
+    .join(MTw.Json)
+    .join(T1w.Json)
+    .join(Prec.Mask)
+    .set{qmrlab_mtsat}
+
+Prec.PDwAl
+    .join(Prec.MTwAl)
+    .join(Prec.Mask)
+    .set{qmrlab_mtr}
+
+fitMtsat(qmrlab_mtsat)
+fitMtratio(qmrlab_mtr)
+
+fitMtsat.out.publish_mtsat
+    .join(preprocessMtsat.out.mtsat_preprocessed)
+    .join(fitMtratio.out.publish_mtratio)
+    .set{publishChannel}
+
+
+
+MTSout = fitMtsat.out.publish_mtsat
+        .multiMap { it -> 
+                    T1map: tuple(it[0],it[1]) 
+                    MTsat: tuple(it[0],it[2])
+                    }
+
+MTRout = fitMtratio.out.publish_mtratio
+        .multiMap { it -> 
+                    MTRmap: tuple(it[0],it[1])
+                    }
+
+MTSout.MTsat
+        .join(MTSout.T1map)
+        .join(MTRout.MTRmap)
+        .join(Prec.GmMask)
+        .join(Prec.WmMask)
+        .set{for_stat}
+
+prepStat(for_stat)
+publishStat(prepStat.out.publish_stat)
+
+//Channel
+//    .fromPath("$bids/mni152_t1w_nlinsym_09c.nii")
+//    .set{fixed}
+   
+
+// This is a useful trick to mix sid with a const file
+// Prec.BiasCor
+//    .combine(fixed)
+//    .set {to_mni_reg}
+
+// normalizeToMni152(to_mni_reg)
+
+// MNItfm = normalizeToMni152.out.mni_normalized
+//                            .multiMap { it -> 
+//                                Affine: tuple(it[0],it[1])
+//                                Nonlin: tuple(it[0],it[2])}
+
+// MNItfm.Affine
+//    .join(MNItfm.Nonlin)
+//    .join(MTSout.MTsat)
+//    .join(MTRout.MTRmap)
+//    .join(MTSout.T1map)
+//    .combine(fixed)
+//    .set{to_warp}
+
+//warpMaps(to_warp)
+
+// publishChannel
+//    .join(warpMaps.out.warped_maps)
+//    .set{publishNew}
+
+// publishOutputs(publishNew)
+
+publishOutputs(publishChannel)
 
 }
 

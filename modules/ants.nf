@@ -14,6 +14,8 @@ process alignMtsatInputs {
         path("${sid}_acq-MTon_MTS_aligned.nii.gz"), \
         path("${sid}_pdw_to_t1w_displacement.*.mat"), \
         path("${sid}_mtw_to_t1w_displacement.*.mat"), \
+        path("./seg.anat/T1_fast_pve_1.nii.gz"), \
+        path("./seg.anat/T1_fast_pve_2.nii.gz"), \
         emit: mtsat_from_alignment
 
     script:
@@ -35,6 +37,9 @@ process alignMtsatInputs {
                             --convergence $params.ants_convergence \
                             --shrink-factors $params.ants_shrink \
                             --smoothing-sigmas $params.ants_smoothing
+        
+        fsl_anat -i $t1w -o ./seg --noreorient --clobber --nocrop --noreg --nononlinreg --nosubcortseg --nocleanup --nobias
+
         """
 }
 
