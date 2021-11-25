@@ -18,18 +18,3 @@ Analysis repository for VEndor NeUtral Sequence (VENUS) dataset
 |vendorSKYretest  | N4_VE11C_LATEST_20160120  | Siemens Skyra 3T   | retest | FLASH| TB1TFL |
 
 Above data is acquired for `sub-phantom` (ISMRM/NIST system phantom) and for `sub-invivo` (healthy subject), yielding 24 for acquisitions.
-
-## Phantom
-
-### ROI
-### B1+ Resampling
-### Fitting 
-### Stats
-
-## In-vivo
-
-### ROI
-### B1+ Resampling
-### Motion correction
-### Fitting 
-### Stats
