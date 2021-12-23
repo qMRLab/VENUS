@@ -11,7 +11,7 @@ dependencies:
   - r-ggplot2=3.3.5
   - r-cowplot=1.1.1
   - r-R.matlab=3.6.2
-  - r-R.htmlwidgets=1.5.4
+  - r-htmlwidgets=1.5.4
   - python=3.6
   - pip
   - pip:
