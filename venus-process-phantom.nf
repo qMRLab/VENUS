@@ -83,7 +83,7 @@ if(params.bids){
 
 // In future releases of qMRLab, the process will be trigerreed by a list of base file names (i.e. noo need to specify nii/json).
 Channel
-    .fromFilePairs("$bids/${entity.dirInputLevel}sub-invivo*_flip-{01,02}_mt-{on,off}_MTS.nii*", maxDepth: 3, size: 3, flat: true)
+    .fromFilePairs("$bids/${entity.dirInputLevel}sub-phantom*_flip-{01,02}_mt-{on,off}_MTS.nii*", maxDepth: 3, size: 3, flat: true)
     .multiMap {sid, MToff, MTon, T1w ->
     PDw: tuple(sid, MToff)
     MTw: tuple(sid, MTon)
@@ -92,13 +92,17 @@ Channel
     .set{niiMTS}
 
 Channel
-    .fromFilePairs("$bids/${entity.dirInputLevel}sub-invivo*_flip-{01,02}_mt-{on,off}_MTS.json", maxDepth: 3, size: 3, flat: true)
+    .fromFilePairs("$bids/${entity.dirInputLevel}sub-phantom*_flip-{01,02}_mt-{on,off}_MTS.json", maxDepth: 3, size: 3, flat: true)
     .multiMap {sid, MToff, MTon, T1w ->
     PDw: tuple(sid, MToff)
     MTw: tuple(sid, MTon)
     T1w: tuple(sid, T1w)
     }
     .set{jsonMTS}
+
+Channel
+    .fromFilePairs("$bids/${entity.dirInputLevel}sub-phantom*_label-{spheres,sphere}_MTS.nii*", maxDepth: 3, size: 1, flat: true)
+    .set {mask}
 
 niiMTS.PDw
    .join(jsonMTS.PDw)
@@ -133,8 +137,10 @@ T1w = pairT1w
 PDw.Nii
     .join(MTw.Nii)
     .join(T1w.Nii)
-    .set{mtsat_for_alignment}
-
+    .join(PDw.Json)
+    .join(MTw.Json)
+    .join(T1w.Json)
+    .set{mtsat_for_fitting}
 
 process publishOutputs {
 
@@ -143,19 +149,13 @@ process publishOutputs {
 
     input:
       tuple val(sid), \
-      path(mtw_aligned), path(pdw_aligned), path(pd2t1), path(mt2t1), path(csf), path(gm), path(wm), path(brain), path(log), path(biascorr), \
-      path(t1mapnii),path(t1mapjson),path(mtsatmapnii),path(mtsatmapjson),path(qmrlabmodel), \
-      path(mtrmapnii), path(mtrmapjson), path(mtrmapqmrlab) // , \
-//      path(mni1), path(mni2), path(mni3) Comment in for mni152 alignment 
+      path(t1mapnii),path(t1mapjson),path(mtsatmapnii),path(mtsatmapjson),path(qmrlabmodel)
 
     publishDir "${derivativesDir}/${out.sub}/${out.ses}anat", mode: 'copy', overwrite: true
 
     output:
       tuple val(sid), \
-      path(mtw_aligned), path(pdw_aligned), path(pd2t1), path(mt2t1), path(csf), path(gm), path(wm), path(brain), path(log), path(biascorr), \
-      path(t1mapnii), path(t1mapjson),path(mtsatmapnii),path(mtsatmapjson),path(qmrlabmodel), \
-      path(mtrmapnii), path(mtrmapjson), path(mtrmapqmrlab) // ,\
-//      path(mni1), path(mni2), path(mni3) Comment in for mni152 alignmend
+      path(t1mapnii), path(t1mapjson),path(mtsatmapnii),path(mtsatmapjson),path(qmrlabmodel)
 
     script:
         """
@@ -170,13 +170,13 @@ process publishStat {
 
     input:
       tuple val(sid), \
-      path(a), path(b), path(c)
+      path(a), path(b)
 
     publishDir "${derivativesDir}/${out.sub}/${out.ses}stat", mode: 'copy', overwrite: true
 
     output:
       tuple val(sid), \
-      path(a), path(b), path(c)
+      path(a), path(b)
 
     script:
         """
@@ -184,105 +184,23 @@ process publishStat {
         """
 }
 
-include { preprocessMtsat; normalizeToMni152; warpMaps} from './modules/ants_new'
-include { fitMtsat } from './modules/mt_sat' addParams(runcmd: params.runcmd)
-include { fitMtratio } from './modules/mt_ratio' addParams(runcmd: params.runcmd)
-include { prepStat } from './modules/statprep' addParams(runcmd: params.runcmd)
+include { fitMtsatNoMask } from './modules/mt_sat' addParams(runcmd: params.runcmd)
+include { prepStatPhantom } from './modules/statprep' addParams(runcmd: params.runcmd)
 
 workflow {
 
-// NOTE: mtsat_for_alignment is not publishing segmentation outputs with SID so not published
-preprocessMtsat(mtsat_for_alignment)
+fitMtsatNoMask(mtsat_for_fitting)
+publishOutputs(fitMtsatNoMask.out.publish_mtsat)
 
-Prec = preprocessMtsat.out.mtsat_preprocessed
+Out = fitMtsatNoMask.out.publish_mtsat
         .multiMap { it -> 
-                    MTwAl: tuple(it[0],it[1]) 
-                    PDwAl: tuple(it[0],it[2])
-                    GmMask: tuple(it[0],it[6])
-                    WmMask: tuple(it[0],it[7])
-                    Mask:  tuple(it[0],it[8])
-                    BiasCor:  tuple(it[0],it[10])}
+                    T1map: tuple(it[0],it[1])}
+Out.T1map
+    .join(mask)
+    .set{for_stat}
 
-// PDw --> MTw --> T1w order matters
-Prec.PDwAl
-    .join(Prec.MTwAl)
-    .join(T1w.Nii)
-    .join(PDw.Json)
-    .join(MTw.Json)
-    .join(T1w.Json)
-    .join(Prec.Mask)
-    .set{qmrlab_mtsat}
-
-Prec.PDwAl
-    .join(Prec.MTwAl)
-    .join(Prec.Mask)
-    .set{qmrlab_mtr}
-
-fitMtsat(qmrlab_mtsat)
-fitMtratio(qmrlab_mtr)
-
-fitMtsat.out.publish_mtsat
-    .join(preprocessMtsat.out.mtsat_preprocessed)
-    .join(fitMtratio.out.publish_mtratio)
-    .set{publishChannel}
-
-
-
-MTSout = fitMtsat.out.publish_mtsat
-        .multiMap { it -> 
-                    T1map: tuple(it[0],it[1]) 
-                    MTsat: tuple(it[0],it[2])
-                    }
-
-MTRout = fitMtratio.out.publish_mtratio
-        .multiMap { it -> 
-                    MTRmap: tuple(it[0],it[1])
-                    }
-
-MTSout.MTsat
-        .join(MTSout.T1map)
-        .join(MTRout.MTRmap)
-        .join(Prec.GmMask)
-        .join(Prec.WmMask)
-        .set{for_stat}
-
-prepStat(for_stat)
-publishStat(prepStat.out.publish_stat)
-
-//Channel
-//    .fromPath("$bids/mni152_t1w_nlinsym_09c.nii")
-//    .set{fixed}
-   
-
-// This is a useful trick to mix sid with a const file
-// Prec.BiasCor
-//    .combine(fixed)
-//    .set {to_mni_reg}
-
-// normalizeToMni152(to_mni_reg)
-
-// MNItfm = normalizeToMni152.out.mni_normalized
-//                            .multiMap { it -> 
-//                                Affine: tuple(it[0],it[1])
-//                                Nonlin: tuple(it[0],it[2])}
-
-// MNItfm.Affine
-//    .join(MNItfm.Nonlin)
-//    .join(MTSout.MTsat)
-//    .join(MTRout.MTRmap)
-//    .join(MTSout.T1map)
-//    .combine(fixed)
-//    .set{to_warp}
-
-//warpMaps(to_warp)
-
-// publishChannel
-//    .join(warpMaps.out.warped_maps)
-//    .set{publishNew}
-
-// publishOutputs(publishNew)
-
-publishOutputs(publishChannel)
+prepStatPhantom(for_stat)
+publishStat(prepStatPhantom.out.publish_stat_phantom)
 
 }
 

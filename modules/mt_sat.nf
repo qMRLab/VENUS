@@ -107,3 +107,32 @@ process fitMtsat {
           $params.runcmd "mt_sat_neuromod('${sid}','$mtw_reg','$pdw_reg','$t1w','$mtwj','$pdwj','$t1wj','mask','$mask'); exit();"
         """
 }
+
+// These process defs will become cleaner as DSL2 improves to 
+// handle optional inputs more elegantly instead of emitting 
+// empty channels and checking for buffer size etc.
+// Just duplicate processes for now.
+process fitMtsatNoMask {
+    tag { sid }
+
+    when:
+        params.use_b1cor == false && params.use_bet == false
+
+    input:
+        tuple val(sid), file(pdw_reg), file(mtw_reg), file(t1w),\
+        file(pdwj), file(mtwj), file(t1wj)
+
+    output:
+        tuple val(sid), \
+        path("${sid}_acq-MTS_T1map.nii.gz"), \
+        path("${sid}_acq-MTS_MTsat.nii.gz"), \
+        path("${sid}_acq-MTS_T1map.json"), \
+        path("${sid}_acq-MTS_MTsat.json"), \
+        path("${sid}_mt_sat.qmrlab.mat"), \
+        emit: publish_mtsat
+
+    script: 
+        """
+          $params.runcmd "mt_sat_neuromod('${sid}','$mtw_reg','$pdw_reg','$t1w','$mtwj','$pdwj','$t1wj'); exit();"
+        """
+}

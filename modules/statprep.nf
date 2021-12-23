@@ -101,3 +101,65 @@ process prepStat {
         exit();"
         """
 }
+
+process prepStatPhantom {
+    tag { sid }
+
+    input:
+        tuple val(sid), file(t1map), file(mask)
+
+    output:
+        tuple val(sid), \
+        path("${sid}_desc-sphere*_metrics.mat"), \
+        path("${sid}_stat_summary.csv"), \
+        emit: publish_stat_phantom
+
+    script: 
+        """
+        $params.runcmd " 
+        curLabel = double(load_nii_data('$mask'));
+        curT1 = double(load_nii_data('$t1map'));
+        csvData = {};
+        refMean = {'1.989','1.454','0.9841','0.706','0.4967','0.3515','0.24713','0.1753','0.1259','0.089'};
+        cHeader = {'Session','RefT1 (mean)','T1 (mean)','T1 (median)','T1 (std)','NumSamples'};
+
+        for ii =1:10
+            csvData(ii,1) = '${sid}';
+            csvData(ii,2) = refMean(ii);
+            T1 = curT1(curLabel == ii);
+            csvData(ii,3) = num2cell(nanmean(T1));
+            csvData(ii,4) = num2cell(nanmedian(T1));
+            csvData(ii,5) = num2cell(nanstd(T1));
+            csvData(ii,6) = length(T1);
+            svName = ['${sid}' '_desc-sphere' num2str(ii) '_metrics.mat'];
+            save('-mat7-binary',svName,'T1');
+        end
+        csvData = [cHeader;csvData];
+        filename = ['${sid}' '_stat_summary.csv'];
+        delimiter = ',';
+        datei = fopen(filename,'w');
+        for z=1:size(csvData,1)
+            for s=1:size(csvData,2)
+        
+                var = eval(['csvData{z,s}']);
+        
+                if size(var,1) == 0
+                    var = '';
+                end
+        
+                if isnumeric(var) == 1
+                    var = num2str(var);
+                end
+        
+                fprintf(datei,var);
+        
+                if s ~= size(csvData,2)
+                    fprintf(datei,[delimiter]);
+                end
+            end
+            fprintf(datei,'\\n');
+        end
+        fclose(datei);
+        exit();"
+        """
+}
