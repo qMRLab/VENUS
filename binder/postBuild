@@ -1,4 +1,4 @@
-Rscript -e 'install.packages(c('repr', 'IRdisplay', 'pbdZMQ', 'devtools'))'
+Rscript -e 'install.packages(c('IRdisplay', 'pbdZMQ', 'devtools'))'
 Rscript -e 'devtools::install_github("GRousselet/rogme")'
 wget -O derivatives.zip https://osf.io/va2jw/download
 unzip derivatives.zip -d /tmp/VENUS
