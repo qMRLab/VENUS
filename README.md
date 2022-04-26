@@ -1,7 +1,7 @@
 # VENUS
 Analysis repository for VEndor NeUtral Sequence (VENUS) dataset
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/qMRLab/venus/HEAD) [![](https://img.shields.io/badge/DATA%20DOI-10.17605%2FOSF.IO%2F5N3CU-blue)](https://osf.io/5n3cu/) 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/qMRLab/VENUS/HEAD) [![](https://img.shields.io/badge/DATA%20DOI-10.17605%2FOSF.IO%2F5N3CU-blue)](https://osf.io/5n3cu/) 
 
 ![](venus_table.png)
 Above data is acquired for `sub-phantom` (ISMRM/NIST system phantom) and for 3 healthy subjects, yielding 24 for acquisitions.
