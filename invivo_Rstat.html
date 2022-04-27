@@ -523,7 +523,7 @@
     
 <span class="p">}</span>
 
-<span class="n">display_hsf</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">derivativesDir</span><span class="p">,</span><span class="n">sub</span><span class="p">,</span><span class="n">scn1</span><span class="p">,</span><span class="n">scn2</span><span class="p">,</span><span class="n">metric</span><span class="p">){</span>
+<span class="n">display_hsf</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">derivativesDir</span><span class="p">,</span><span class="n">scn1</span><span class="p">,</span><span class="n">scn2</span><span class="p">,</span><span class="n">metric</span><span class="p">){</span>
     
     <span class="n">curDir</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="n">derivativesDir</span><span class="p">,</span><span class="s">&quot;HSF&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
     <span class="n">ses_venus</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">row.names</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;G1&quot;</span><span class="p">,</span><span class="s">&quot;S1&quot;</span><span class="p">,</span><span class="s">&quot;S2&quot;</span><span class="p">)</span> <span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;rth750&quot;</span><span class="p">,</span><span class="s">&quot;rthPRI&quot;</span><span class="p">,</span><span class="s">&quot;rthSKY&quot;</span><span class="p">))</span>
@@ -993,13 +993,12 @@ library(plyr); library(dplyr)
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">subject</span> <span class="o">=</span><span class="s">&quot;sub-invivo3&quot;</span> <span class="c1"># or sub-invivo2 or sub-invivo3</span>
-<span class="n">metric</span> <span class="o">=</span><span class="s">&quot;MTsat&quot;</span> <span class="c1"># or MTR or MTsat</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">metric</span> <span class="o">=</span><span class="s">&quot;MTsat&quot;</span> <span class="c1"># or MTR or MTsat</span>
 <span class="n">scanner1</span> <span class="o">=</span> <span class="s">&quot;G1&quot;</span> <span class="c1"># or S1 or S2</span>
 <span class="n">scanner2</span> <span class="o">=</span> <span class="s">&quot;S1&quot;</span> <span class="c1"># or G1 or S2</span>
 
 
-<span class="nf">display_hsf</span><span class="p">(</span><span class="s">&quot;/tmp/VENUS/&quot;</span><span class="p">,</span><span class="n">subject</span><span class="p">,</span><span class="n">scanner1</span><span class="p">,</span><span class="n">scanner2</span><span class="p">,</span><span class="n">metric</span><span class="p">)</span>
+<span class="nf">display_hsf</span><span class="p">(</span><span class="s">&quot;/tmp/VENUS/&quot;</span><span class="p">,</span><span class="n">scanner1</span><span class="p">,</span><span class="n">scanner2</span><span class="p">,</span><span class="n">metric</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
