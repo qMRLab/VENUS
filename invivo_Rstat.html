@@ -339,10 +339,18 @@
 <h1>Shift function analysis<a class="headerlink" href="#shift-function-analysis" title="Permalink to this headline">¶</a></h1>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1280px-R_logo.svg.png" width="50px"/>
 <p>To run this notebook locally, please make sure that you installed the following libraries by:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;R.matlab&quot;</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;gridextra&quot;</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;plotly&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="n">tibble</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">png</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">R.matlab</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">plotly</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">htmlwidgets</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">repr</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">PairedData</span><span class="p">)</span>
 <span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#39;GRousselet/rogme&#39;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;tidyverse&quot;</span><span class="p">)</span>
 </pre></div>
@@ -353,7 +361,12 @@
 </div>
 <div class="admonition-note admonition">
 <p class="admonition-title">Note</p>
-<p>The following code cell loads all the necessary R libraries and defines some helper functions. The data is expected to be found in the <code class="docutils literal notranslate"><span class="pre">/tmp/VENUS</span></code> directory.</p>
+<p>The following code cell loads all the necessary R libraries and defines some helper functions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The data is expected to be found in the <code class="docutils literal notranslate"><span class="pre">/tmp/VENUS</span></code> directory.</p>
+<p>Please do not execute this notebook first. Python notebooks (<code class="docutils literal notranslate"><span class="pre">phantom_python</span></code> or <code class="docutils literal notranslate"><span class="pre">invivo_python</span></code>) uses repo2data to download the data on the BinderHub instance. Executing either one of them first will make the data available to this notebook as well.</p>
 </div>
 <div class="cell tag_hide-output tag_hide-input docutils container">
 <div class="cell_input docutils container">
