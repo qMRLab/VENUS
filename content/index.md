@@ -2,8 +2,9 @@
 
 _Agah Karakuzu, Labonny Biswas, Julien Cohen-Adad, Nikola Stikov_
 
-<br><br>
+<br>
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1280px-R_logo.svg.png" width="50px"/>&nbsp;<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" width="38px"/>
 ````{margin}
 <center><img src="https://www.ismrm.org/17/program_files/images/summa-ribbon.png" width="150px"/></center>
 ````
@@ -16,6 +17,12 @@ You can modify the code, and re-generate the outputs in your web browser without
 
 If you have any questions or comments, feel free to open an issue by clicking the GitHub icon at the top of this page.👆
 ```
+
+`````{admonition} qMRFLow execution reports
+:class: seealso
+* 📑 Click <a href="phantom-report.html">here</a> to see the report for the phantom pipeline
+* 📑 Click <a href="qmrflow-exec-report.html">here</a> to see the report for the in-vivo pipeline
+`````
 
 #### What is VENUS?
 
@@ -136,12 +143,6 @@ Next, set MATLAB or Octave executable path and qMRLab directory at [this line](h
 
 Finally, execute the workflows using the `nextflow run` commands above.
 ```
-
-`````{admonition} qMRFLow execution reports
-:class: seealso
-* 📑 Click here to see the report for the phantom pipeline
-* 📑 Click here to see the report for the in-vivo pipeline
-`````
 
 #### Acknowledgements
 
