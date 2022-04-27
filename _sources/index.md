@@ -18,6 +18,12 @@ You can modify the code, and re-generate the outputs in your web browser without
 If you have any questions or comments, feel free to open an issue by clicking the GitHub icon at the top of this page.👆
 ```
 
+`````{admonition} qMRFLow execution reports
+:class: seealso
+* 📑 Click <a href="phantom-report.html">here</a> to see the report for the phantom pipeline
+* 📑 Click <a href="qmrflow-exec-report.html">here</a> to see the report for the in-vivo pipeline
+`````
+
 #### What is VENUS?
 
 VENUS is the acronym of our vendor-neutral [qMRLab](https://qmrlab.org) workflow that begins with the acquisition of qMRI data using [open-source & vendor-neutral pulse sequences](https://github.com/qmrlab/pulse_sequences) and follows with the post-processing using data-driven and container-mediated [qMRFLow](https://github.com/qmrlab/qmrflow) pipelines.
@@ -137,12 +143,6 @@ Next, set MATLAB or Octave executable path and qMRLab directory at [this line](h
 
 Finally, execute the workflows using the `nextflow run` commands above.
 ```
-
-`````{admonition} qMRFLow execution reports
-:class: seealso
-* 📑 Click <a href="phantom-report.html">here</a> to see the report for the phantom pipeline
-* 📑 Click <a href="qmrflow-exec-report.html">here</a> to see the report for the in-vivo pipeline
-`````
 
 #### Acknowledgements
 

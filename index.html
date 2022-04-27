@@ -287,6 +287,13 @@
 <p>You can modify the code, and re-generate the outputs in your web browser without installing or downloading anything to your computer!</p>
 <p>If you have any questions or comments, feel free to open an issue by clicking the GitHub icon at the top of this page.👆</p>
 </div>
+<div class="seealso admonition">
+<p class="admonition-title">qMRFLow execution reports</p>
+<ul class="simple">
+<li><p>📑 Click <a href="phantom-report.html">here</a> to see the report for the phantom pipeline</p></li>
+<li><p>📑 Click <a href="qmrflow-exec-report.html">here</a> to see the report for the in-vivo pipeline</p></li>
+</ul>
+</div>
 <div class="section" id="what-is-venus">
 <h2>What is VENUS?<a class="headerlink" href="#what-is-venus" title="Permalink to this headline">¶</a></h2>
 <p>VENUS is the acronym of our vendor-neutral <a class="reference external" href="https://qmrlab.org">qMRLab</a> workflow that begins with the acquisition of qMRI data using <a class="reference external" href="https://github.com/qmrlab/pulse_sequences">open-source &amp; vendor-neutral pulse sequences</a> and follows with the post-processing using data-driven and container-mediated <a class="reference external" href="https://github.com/qmrlab/qmrflow">qMRFLow</a> pipelines.</p>
@@ -299,8 +306,8 @@
 <p>To test this, we developed a vendor-neutral 3D-SPGR sequence, then compared measurement stability between scanners using VENUS and vendor-native (NATIVE) implementations.</p>
 <p><strong>Toggle the tabs for details:</strong></p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7f25c57f-81d4-4682-aac3-08d418338da4" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
-</input><label class="tabbed-label" for="7f25c57f-81d4-4682-aac3-08d418338da4">
+<input checked="checked" id="c963327a-6b1e-47d0-9fe4-6cefa716bd62" name="5dddfcd9-8cdb-41cb-95ae-bc4e36c1739f" type="radio">
+</input><label class="tabbed-label" for="c963327a-6b1e-47d0-9fe4-6cefa716bd62">
 Scanners</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p><strong>G1</strong> GE Discovery 750w (3T)</p></li>
@@ -308,8 +315,8 @@ Scanners</label><div class="tabbed-content docutils">
 <li><p><strong>S2</strong> Siemens Skyra (3T)</p></li>
 </ul>
 </div>
-<input id="41a25865-c69e-47f4-9fe4-1d06cc6accba" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
-</input><label class="tabbed-label" for="41a25865-c69e-47f4-9fe4-1d06cc6accba">
+<input id="18bcd7e4-0a7e-43dc-9a4a-5ba8a4588f59" name="5dddfcd9-8cdb-41cb-95ae-bc4e36c1739f" type="radio">
+</input><label class="tabbed-label" for="18bcd7e4-0a7e-43dc-9a4a-5ba8a4588f59">
 NATIVE implementation</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p><strong>G1</strong> SPGR (<code class="docutils literal notranslate"><span class="pre">DV25.0_R02_1549.b</span></code>)</p></li>
@@ -317,8 +324,8 @@ NATIVE implementation</label><div class="tabbed-content docutils">
 <li><p><strong>S2</strong> FLASH (<code class="docutils literal notranslate"><span class="pre">N4_VE11C_LATEST_20160120</span></code>)</p></li>
 </ul>
 </div>
-<input id="b18198bd-9868-4dc6-b1da-3530d84fb2e0" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
-</input><label class="tabbed-label" for="b18198bd-9868-4dc6-b1da-3530d84fb2e0">
+<input id="41ba8f2d-e11c-482f-bba4-b88d50ab3938" name="5dddfcd9-8cdb-41cb-95ae-bc4e36c1739f" type="radio">
+</input><label class="tabbed-label" for="41ba8f2d-e11c-482f-bba4-b88d50ab3938">
 VENUS implementation</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p><strong>G1</strong> <a class="reference external" href="https://github.com/qMRLab/mt_sat/releases/tag/v1.0">qMRPullseq/mt_sat</a> (<code class="docutils literal notranslate"><span class="pre">v1.0</span></code> on <code class="docutils literal notranslate"><span class="pre">RTHawk</span> <span class="pre">v3</span></code>)</p></li>
@@ -326,15 +333,15 @@ VENUS implementation</label><div class="tabbed-content docutils">
 <li><p><strong>S2</strong> <a class="reference external" href="https://github.com/qMRLab/mt_sat/releases/tag/v1.0">qMRPullseq/mt_sat</a> (<code class="docutils literal notranslate"><span class="pre">v1.0</span></code> on <code class="docutils literal notranslate"><span class="pre">RTHawk</span> <span class="pre">v3</span></code>)</p></li>
 </ul>
 </div>
-<input id="4fabad89-e55c-45cc-ae35-34b660ad5f28" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
-</input><label class="tabbed-label" for="4fabad89-e55c-45cc-ae35-34b660ad5f28">
+<input id="b688b730-d6c8-4982-9423-a7de105abec1" name="5dddfcd9-8cdb-41cb-95ae-bc4e36c1739f" type="radio">
+</input><label class="tabbed-label" for="b688b730-d6c8-4982-9423-a7de105abec1">
 Phantom</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p><a class="reference external" href="https://qmri.com/contrast-mri/">ISMRM/NIST System Phantom</a> (SN = 42)</p></li>
 </ul>
 </div>
-<input id="88c116be-9ba6-46c2-8091-90643a3d91bc" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
-</input><label class="tabbed-label" for="88c116be-9ba6-46c2-8091-90643a3d91bc">
+<input id="ec183bfd-d7a4-4cf5-b9e0-413d5317fd7a" name="5dddfcd9-8cdb-41cb-95ae-bc4e36c1739f" type="radio">
+</input><label class="tabbed-label" for="ec183bfd-d7a4-4cf5-b9e0-413d5317fd7a">
 In-vivo</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>3 healthy participants volunteered for data collection.</p></li>
@@ -404,13 +411,6 @@ nextflow run venus-process-invivo.nf --bids /set/to/bids/directory -with-report 
 <p>In the config file, set the following parameter to <code class="docutils literal notranslate"><span class="pre">false</span></code> at <a class="reference external" href="https://github.com/qMRLab/VENUS/blob/90df3f94aa0c07ee2a116b9ad5785b2b0057fa60/nextflow.config#L131-L133">this line</a>, this will enforce workflow to look for local executables.</p>
 <p>Next, set MATLAB or Octave executable path and qMRLab directory at <a class="reference external" href="https://github.com/qMRLab/VENUS/blob/90df3f94aa0c07ee2a116b9ad5785b2b0057fa60/nextflow.config#L144-L148">this line</a></p>
 <p>Finally, execute the workflows using the <code class="docutils literal notranslate"><span class="pre">nextflow</span> <span class="pre">run</span></code> commands above.</p>
-</div>
-<div class="seealso admonition">
-<p class="admonition-title">qMRFLow execution reports</p>
-<ul class="simple">
-<li><p>📑 Click <a href="phantom-report.html">here</a> to see the report for the phantom pipeline</p></li>
-<li><p>📑 Click <a href="qmrflow-exec-report.html">here</a> to see the report for the in-vivo pipeline</p></li>
-</ul>
 </div>
 </div>
 <div class="section" id="acknowledgements">
