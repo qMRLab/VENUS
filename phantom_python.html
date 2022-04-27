@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T1 accuracy &amp; inter-vendor agreement &#8212; Vendor-neutral sequences (VENUS) and multi-center reproducibility of qMRI</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="T1, MTR and MTsat in-vivo" href="invivo_python.html" />
+    <link rel="prev" title="Introduction" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/venus_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Vendor-neutral sequences (VENUS) and multi-center reproducibility of qMRI</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Phantom
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   T1 accuracy &amp; inter-vendor agreement
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  In-vivo Distributions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="invivo_python.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     T1
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MTR
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MTsat
+    </span>
+   </code>
+   in-vivo
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  In-vivo Stats
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="invivo_Rstat.html">
+   Shift function analysis
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/phantom_python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/qmrlab/venus"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/qmrlab/venus/issues/new?title=Issue%20on%20page%20%2Fphantom_python.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/qmrlab/venus/main?urlpath=lab/tree/content/phantom_python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/qmrlab/venus/blob/main/content/phantom_python.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#peak-snr-values">
+   Peak SNR values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#venus-vs-native-t1-estimations">
+   VENUS vs NATIVE
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     T1
+    </span>
+   </code>
+   estimations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#percent-measurement-errors-t1">
+   Percent measurement errors (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ∆T1
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#averaged-t1-comparison">
+   Averaged
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ∆T1
+    </span>
+   </code>
+   comparison
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t1-accuracy-inter-vendor-agreement">
+<h1>T1 accuracy &amp; inter-vendor agreement<a class="headerlink" href="#t1-accuracy-inter-vendor-agreement" title="Permalink to this headline">¶</a></h1>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" width="50px"/>
+<p>T1 plate of the ISMRM/NIST system phantom was scanned with the following T1 mapping protocol:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click here to reveal the variable flip angle (VFA) protocol.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter (PDw/T1w)</p></th>
+<th class="head"><p>G1<sub>NATIVE</sub></p></th>
+<th class="head"><p>S1<sub>NATIVE</sub></p></th>
+<th class="head"><p>S2<sub>NATIVE</sub></p></th>
+<th class="head"><p>VENUS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sequence Name</p></td>
+<td><p>SPGR</p></td>
+<td><p>FLASH</p></td>
+<td><p>FLASH</p></td>
+<td><p>mt_sat v1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flip Angle (°)</p></td>
+<td><p>6/20</p></td>
+<td><p>6/20</p></td>
+<td><p>6/20</p></td>
+<td><p>6/20</p></td>
+</tr>
+<tr class="row-even"><td><p>TR (ms)</p></td>
+<td><p>32/18</p></td>
+<td><p>32/18</p></td>
+<td><p>32/18</p></td>
+<td><p>32/18</p></td>
+</tr>
+<tr class="row-odd"><td><p>TE (ms)</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>FOV (cm)</p></td>
+<td><p>25.6</p></td>
+<td><p>25.6</p></td>
+<td><p>25.6</p></td>
+<td><p>25.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Acquisition Matrix</p></td>
+<td><p>256x256</p></td>
+<td><p>256x256</p></td>
+<td><p>256x256</p></td>
+<td><p>256x256</p></td>
+</tr>
+<tr class="row-even"><td><p>Receiver BW (kHz)</p></td>
+<td><p>62.5</p></td>
+<td><p>62.5</p></td>
+<td><p>62.5</p></td>
+<td><p>62.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>RF Phase Increment (°)</p></td>
+<td><p>115.4</p></td>
+<td><p>50</p></td>
+<td><p>50</p></td>
+<td><p>117</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The nominal T1 values (s) of the system phantom (SN = 42) were <code class="docutils literal notranslate"><span class="pre">1.98</span></code>, <code class="docutils literal notranslate"><span class="pre">1.45</span></code>, <code class="docutils literal notranslate"><span class="pre">0.98</span></code>, <code class="docutils literal notranslate"><span class="pre">0.71</span></code>, <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, <code class="docutils literal notranslate"><span class="pre">0.35</span></code>, <code class="docutils literal notranslate"><span class="pre">0.24</span></code>, <code class="docutils literal notranslate"><span class="pre">0.17</span></code>, <code class="docutils literal notranslate"><span class="pre">0.13</span></code>, <code class="docutils literal notranslate"><span class="pre">0.09</span></code> in 10 reference spheres (<strong>R1- R10</strong>) of the phantom. These values are shown using white cross markers throughout this notebook.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>The following code cell loads all the necessary Python packages, defines common variables and downloads the data to <code class="docutils literal notranslate"><span class="pre">/tmp/VENUS</span></code> directory. If data already exists, the download will be skipped.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">tools</span><span class="p">,</span> <span class="n">subplots</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">scipy.io</span> <span class="k">as</span> <span class="nn">sio</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">repo2data.repo2data</span> <span class="kn">import</span> <span class="n">Repo2Data</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="n">data_req_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;binder&quot;</span><span class="p">,</span> <span class="s2">&quot;data_requirement.json&quot;</span><span class="p">)</span>
+<span class="n">repo2data</span> <span class="o">=</span> <span class="n">Repo2Data</span><span class="p">(</span><span class="n">data_req_path</span><span class="p">)</span>
+<span class="n">data_path</span> <span class="o">=</span> <span class="n">repo2data</span><span class="o">.</span><span class="n">install</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">derivativesDir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span><span class="s2">&quot;qMRFlow&quot;</span><span class="p">)</span>
+
+<span class="n">spheres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">refMean</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.989</span><span class="p">,</span><span class="mf">1.454</span><span class="p">,</span><span class="mf">0.9841</span><span class="p">,</span><span class="mf">0.706</span><span class="p">,</span><span class="mf">0.4967</span><span class="p">,</span><span class="mf">0.3515</span><span class="p">,</span><span class="mf">0.24713</span><span class="p">,</span><span class="mf">0.1753</span><span class="p">,</span><span class="mf">0.1259</span><span class="p">,</span><span class="mf">0.089</span><span class="p">]</span>
+<span class="n">sessions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rth750rev&#39;</span><span class="p">,</span><span class="s1">&#39;rthPRIrev&#39;</span><span class="p">,</span><span class="s1">&#39;rthSKYrev&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;vendor750rev&#39;</span><span class="p">,</span><span class="s1">&#39;vendorPRIrev&#39;</span><span class="p">,</span><span class="s1">&#39;vendorSKYrev&#39;</span><span class="p">]</span>
+<span class="n">convert_tag</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rth750&#39;</span><span class="p">:</span><span class="s1">&#39;G1&lt;sub&gt;neutral&lt;/sub&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;rthPRI&#39;</span><span class="p">:</span><span class="s1">&#39;S1&lt;sub&gt;neutral&lt;/sub&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;rthSKY&#39;</span><span class="p">:</span><span class="s1">&#39;S2&lt;sub&gt;neutral&lt;/sub&gt;&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;vendor750&#39;</span><span class="p">:</span><span class="s1">&#39;G1&lt;sub&gt;native&lt;/sub&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;vendorPRI&#39;</span><span class="p">:</span><span class="s1">&#39;S1&lt;sub&gt;native&lt;/sub&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;vendorSKY&#39;</span><span class="p">:</span><span class="s1">&#39;S2&lt;sub&gt;native&lt;/sub&gt;&#39;</span>
+              <span class="p">}</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rth750&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,8,30,1)&#39;</span><span class="p">,</span><span class="s1">&#39;rthPRI&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,117,0,1)&#39;</span><span class="p">,</span><span class="s1">&#39;rthSKY&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,220,0,1)&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;vendor750&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(13,186,233,1)&#39;</span><span class="p">,</span><span class="s1">&#39;vendorPRI&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(2.5,187,180,1)&#39;</span><span class="p">,</span><span class="s1">&#39;vendorSKY&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(0,248,205,1)&#39;</span><span class="p">}</span>
+<span class="n">colors_line</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rth750&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,8,30,0.2)&#39;</span><span class="p">,</span><span class="s1">&#39;rthPRI&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,117,0,0.2)&#39;</span><span class="p">,</span><span class="s1">&#39;rthSKY&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,220,0,0.2)&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;vendor750&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(13,186,233,0.2)&#39;</span><span class="p">,</span><span class="s1">&#39;vendorPRI&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(2.5,187,180,0.2)&#39;</span><span class="p">,</span><span class="s1">&#39;vendorSKY&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(0,248,205,0.2)&#39;</span><span class="p">}</span>
+<span class="n">line_dash</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rth750&#39;</span><span class="p">:</span><span class="s1">&#39;dash&#39;</span><span class="p">,</span><span class="s1">&#39;rthPRI&#39;</span><span class="p">:</span><span class="s1">&#39;dash&#39;</span><span class="p">,</span><span class="s1">&#39;rthSKY&#39;</span><span class="p">:</span><span class="s1">&#39;dash&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;vendor750&#39;</span><span class="p">:</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span><span class="s1">&#39;vendorPRI&#39;</span><span class="p">:</span><span class="s1">&#39;solid&#39;</span><span class="p">,</span><span class="s1">&#39;vendorSKY&#39;</span><span class="p">:</span><span class="s1">&#39;solid&#39;</span><span class="p">}</span>
+<span class="n">line_sym</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rth750&#39;</span><span class="p">:</span><span class="s1">&#39;circle&#39;</span><span class="p">,</span><span class="s1">&#39;rthPRI&#39;</span><span class="p">:</span><span class="s1">&#39;circle&#39;</span><span class="p">,</span><span class="s1">&#39;rthSKY&#39;</span><span class="p">:</span><span class="s1">&#39;circle&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;vendor750&#39;</span><span class="p">:</span><span class="s1">&#39;square&#39;</span><span class="p">,</span><span class="s1">&#39;vendorPRI&#39;</span><span class="p">:</span><span class="s1">&#39;square&#39;</span><span class="p">,</span><span class="s1">&#39;vendorSKY&#39;</span><span class="p">:</span><span class="s1">&#39;square&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---- repo2data starting ----
+/Users/agah/opt/anaconda3/envs/jbnew/lib/python3.6/site-packages/repo2data
+Config from file :
+../binder/data_requirement.json
+Destination:
+/tmp/VENUS
+
+Info : /tmp/VENUS already downloaded
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="peak-snr-values">
+<h2>Peak SNR values<a class="headerlink" href="#peak-snr-values" title="Permalink to this headline">¶</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p>Reproduces Figure 3a from the <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2021.12.27.474259v2">article</a>.</p>
+</div>
+<p>Calculations of <code class="docutils literal notranslate"><span class="pre">signal</span></code> (average value of the highest signal sphere) and <code class="docutils literal notranslate"><span class="pre">noise</span></code> (background standard deviation) were performed manually using 3D Slicer.</p>
+<blockquote>
+<div><p>VENUS PSNR values are on a par with those of vendor-native T1w and PDw images (Fig. 3a).</p>
+</div></blockquote>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rth750&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,8,30,1)&#39;</span><span class="p">,</span><span class="s1">&#39;rthPRI&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,117,0,1)&#39;</span><span class="p">,</span><span class="s1">&#39;rthSKY&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,220,0,1)&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;vendor750&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(0,75,255,1)&#39;</span><span class="p">,</span><span class="s1">&#39;vendorPRI&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(24,231,234,1)&#39;</span><span class="p">,</span><span class="s1">&#39;vendorSKY&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(24,234,141,1)&#39;</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;signal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1649</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">264</span><span class="p">,</span><span class="mi">793</span><span class="p">,</span><span class="mi">2330</span><span class="p">,</span><span class="mi">2379</span><span class="p">,</span><span class="mi">767</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">362</span><span class="p">,</span><span class="mi">1023</span><span class="p">,</span><span class="mi">1016</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;noise&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.68</span><span class="p">,</span><span class="mf">0.34</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mf">0.66</span><span class="p">,</span><span class="mf">1.64</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">1.66</span><span class="p">,</span><span class="mf">0.32</span><span class="p">,</span><span class="mf">0.34</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">1.72</span><span class="p">,</span><span class="mf">1.71</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;session&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rth750&quot;</span><span class="p">,</span><span class="s2">&quot;rthPRI&quot;</span><span class="p">,</span><span class="s2">&quot;rthSKY&quot;</span><span class="p">,</span><span class="s2">&quot;vendor750&quot;</span><span class="p">,</span><span class="s2">&quot;vendorPRI&quot;</span><span class="p">,</span><span class="s2">&quot;vendorSKY&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;G1&lt;sub&gt;VENUS&lt;/sub&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;S1&lt;sub&gt;VENUS&lt;/sub&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;S2&lt;sub&gt;VENUS&lt;/sub&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;G1&lt;sub&gt;NATIVE&lt;/sub&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;S1&lt;sub&gt;NATIVE&lt;/sub&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;S2&lt;sub&gt;NATIVE&lt;/sub&gt;&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;acq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;T1w&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;PDw&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span> 
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;SNR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;signal&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;noise&#39;</span><span class="p">])</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">defchararray</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;acq&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">defchararray</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SNR&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">],</span><span class="mi">2</span><span class="p">))),</span> <span class="n">base</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SNR&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">],</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">],</span>
+        <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;T1w&quot;</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+        <span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+        <span class="n">marker_color</span><span class="o">=</span> <span class="p">[</span><span class="n">colors</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;session&#39;</span><span class="p">]]))</span>
+<span class="c1">#aa = list(map(str,np.round(df[&#39;SNR&#39;][6:12],2)))</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">defchararray</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;acq&#39;</span><span class="p">][</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">])</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">defchararray</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SNR&#39;</span><span class="p">][</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">],</span><span class="mi">2</span><span class="p">))),</span> <span class="n">base</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SNR&#39;</span><span class="p">][</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">],</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">][</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">],</span>
+        <span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+        <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PDw&quot;</span><span class="p">,</span>
+        <span class="n">marker_color</span><span class="o">=</span><span class="p">[</span><span class="n">colors</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;session&#39;</span><span class="p">]]))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">barmode</span><span class="o">=</span><span class="s1">&#39;group&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;PSNR&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="0f2bc139-10b9-428e-bec2-3e55b23a7848" class="plotly-graph-div" style="height:300px; width:900px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0f2bc139-10b9-428e-bec2-3e55b23a7848")) {                    Plotly.newPlot(                        "0f2bc139-10b9-428e-bec2-3e55b23a7848",                        [{"marker": {"color": ["rgba(255,8,30,1)", "rgba(255,117,0,1)", "rgba(255,220,0,1)", "rgba(0,75,255,1)", "rgba(24,231,234,1)", "rgba(24,234,141,1)", "rgba(255,8,30,1)", "rgba(255,117,0,1)", "rgba(255,220,0,1)", "rgba(0,75,255,1)", "rgba(24,231,234,1)", "rgba(24,234,141,1)"]}, "name": "T1w", "showlegend": false, "text": ["29.92<br>T1w", "28.49<br>T1w", "29.03<br>T1w", "30.8<br>T1w", "31.53<br>T1w", "31.59<br>T1w"], "textposition": "auto", "type": "bar", "x": ["G1<sub>VENUS</sub>", "S1<sub>VENUS</sub>", "S2<sub>VENUS</sub>", "G1<sub>NATIVE</sub>", "S1<sub>NATIVE</sub>", "S2<sub>NATIVE</sub>"], "y": [29.91911373918656, 28.48732324669351, 29.030899869919438, 30.797292517757352, 31.52512072978321, 31.5891049782336]}, {"marker": {"color": ["rgba(255,8,30,1)", "rgba(255,117,0,1)", "rgba(255,220,0,1)", "rgba(0,75,255,1)", "rgba(24,231,234,1)", "rgba(24,234,141,1)", "rgba(255,8,30,1)", "rgba(255,117,0,1)", "rgba(255,220,0,1)", "rgba(0,75,255,1)", "rgba(24,231,234,1)", "rgba(24,234,141,1)"]}, "name": "PDw", "showlegend": false, "text": ["26.65<br>PDw", "25.36<br>PDw", "25.37<br>PDw", "27.81<br>PDw", "27.74<br>PDw", "27.74<br>PDw"], "textposition": "auto", "type": "bar", "x": ["G1<sub>VENUS</sub>", "S1<sub>VENUS</sub>", "S2<sub>VENUS</sub>", "G1<sub>NATIVE</sub>", "S1<sub>NATIVE</sub>", "S2<sub>NATIVE</sub>"], "y": [26.646872759089256, 25.36242706838319, 25.367069447039064, 27.80557320149522, 27.743471868046115, 27.738975975557466]}],                        {"barmode": "group", "height": 300, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "width": 900, "yaxis": {"title": {"text": "PSNR"}}},                        {"responsive": true}                    ).then(function(){
+
+var gd = document.getElementById('0f2bc139-10b9-428e-bec2-3e55b23a7848');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+</div>
+<div class="section" id="venus-vs-native-t1-estimations">
+<h2>VENUS vs NATIVE <code class="docutils literal notranslate"><span class="pre">T1</span></code> estimations<a class="headerlink" href="#venus-vs-native-t1-estimations" title="Permalink to this headline">¶</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p>Reproduces Figure 4b from the <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2021.12.27.474259v2">article</a>.</p>
+</div>
+<p>T1 values from the vendor-native acquisitions are represented by solid lines and square markers in cold colors, and those from VENUS attain dashed lines and circle markers in hot colors.</p>
+<blockquote>
+<div><p>Vendor-native measurements, especially G1<sub>NATIVE</sub> and S2<sub>NATIVE</sub>, overestimate T1. G1<sub>VENUS</sub> and S1-2<sub>VENUS</sub> remain closer to the reference.</p>
+</div></blockquote>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">sessions</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">avg_array</span>  <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">std_array</span>  <span class="o">=</span>  <span class="p">[]</span>
+    <span class="n">cur_tag</span> <span class="o">=</span> <span class="n">sessions</span><span class="p">[</span><span class="n">jj</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">cur_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">derivativesDir</span> <span class="o">+</span> <span class="s1">&#39;/sub-phantom/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="n">jj</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/stat/sub-phantom_ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="n">jj</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_stat_summary.csv&#39;</span><span class="p">)</span>
+    <span class="n">avg_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cur_csv</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">])</span>
+    <span class="n">std_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cur_csv</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">])</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array</span><span class="p">)))</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array</span><span class="p">)))</span>
+    <span class="c1"># Add std lines</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span> <span class="n">refMean</span> <span class="o">+</span> <span class="n">refMean</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">upper</span><span class="o">+</span><span class="n">lower</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;toself&#39;</span><span class="p">,</span>
+        <span class="n">fillcolor</span><span class="o">=</span> <span class="n">colors_line</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">],</span>
+        <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;rgba(255,0,0,0)&#39;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span> <span class="n">convert_tag</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">]</span>
+    <span class="p">))</span>
+    <span class="c1"># Add markers</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">avg_array</span><span class="p">,</span>
+        <span class="n">line_color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">],</span>
+        <span class="n">name</span><span class="o">=</span> <span class="n">convert_tag</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">],</span>
+        <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="n">line_sym</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">],</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.85</span><span class="p">),</span>
+        <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="n">line_dash</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">])</span>
+    <span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">tracegroupgap</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">)))</span>
+<span class="n">axis_template</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">linecolor</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> 
+                     <span class="n">showticklabels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span> 
+                     <span class="n">gridcolor</span> <span class="o">=</span> <span class="s1">&#39;lightsteelblue&#39;</span><span class="p">,</span>
+                     <span class="n">tickvals</span> <span class="o">=</span> <span class="n">refMean</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">axis_template</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.1</span><span class="p">],</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Reference T1 (s)&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">axis_template</span><span class="p">,</span><span class="n">tickmode</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">,</span><span class="n">tickvals</span><span class="o">=</span><span class="n">refMean</span><span class="p">,</span><span class="n">ticktext</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;R10&quot;</span><span class="p">,</span><span class="s2">&quot;R9&quot;</span><span class="p">,</span><span class="s2">&quot;R8&quot;</span><span class="p">,</span><span class="s2">&quot;R7&quot;</span><span class="p">,</span><span class="s2">&quot;R6&quot;</span><span class="p">,</span><span class="s2">&quot;R5&quot;</span><span class="p">,</span><span class="s2">&quot;R4&quot;</span><span class="p">,</span><span class="s2">&quot;R3&quot;</span><span class="p">,</span><span class="s2">&quot;R2&quot;</span><span class="p">,</span><span class="s2">&quot;R1&quot;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">title_font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">hovermode</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">refMean</span><span class="p">,</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;markers&#39;</span><span class="p">,</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Reference&#39;</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;cross-open&#39;</span><span class="p">,</span><span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="p">))</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="b871a9bc-a591-41f9-8492-7d71ed38a489" class="plotly-graph-div" style="height:1000px; width:800px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("b871a9bc-a591-41f9-8492-7d71ed38a489")) {                    Plotly.newPlot(                        "b871a9bc-a591-41f9-8492-7d71ed38a489",                        [{"fill": "toself", "fillcolor": "rgba(255,8,30,0.2)", "line": {"color": "rgba(255,0,0,0)"}, "name": "G1<sub>neutral</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089, 0.089, 0.1259, 0.1753, 0.24713, 0.3515, 0.4967, 0.706, 0.9841, 1.454, 1.989], "y": [2.1386979999999998, 1.49916, 1.0113599999999998, 0.677443, 0.45579600000000003, 0.31741, 0.24482199999999998, 0.19971690000000003, 0.160382, 0.1219825, 0.1105575, 0.14369800000000002, 0.1827631, 0.22389799999999999, 0.28799, 0.424024, 0.6389770000000001, 0.9657999999999999, 1.44464, 1.976902]}, {"line": {"color": "rgba(255,8,30,1)", "dash": "dash", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.85, "size": 20, "symbol": "circle"}, "name": "G1<sub>neutral</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089], "y": [2.0578, 1.4719, 0.9885799999999999, 0.6582100000000001, 0.43991, 0.3027, 0.23435999999999998, 0.19124000000000002, 0.15204, 0.11627]}, {"fill": "toself", "fillcolor": "rgba(255,117,0,0.2)", "line": {"color": "rgba(255,0,0,0)"}, "name": "S1<sub>neutral</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089, 0.089, 0.1259, 0.1753, 0.24713, 0.3515, 0.4967, 0.706, 0.9841, 1.454, 1.989], "y": [2.179291, 1.4926, 1.027152, 0.712537, 0.49402699999999994, 0.3524756, 0.2703854, 0.22355479999999997, 0.16343220000000003, 0.1095597, 0.10174029999999999, 0.1525478, 0.2104652, 0.2568146, 0.33542439999999996, 0.47155299999999994, 0.682663, 0.988048, 1.4274, 2.0521089999999997]}, {"line": {"color": "rgba(255,117,0,1)", "dash": "dash", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.85, "size": 20, "symbol": "circle"}, "name": "S1<sub>neutral</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089], "y": [2.1157, 1.46, 1.0076, 0.6976, 0.48278999999999994, 0.34395, 0.2636, 0.21700999999999998, 0.15799000000000002, 0.10565]}, {"fill": "toself", "fillcolor": "rgba(255,220,0,0.2)", "line": {"color": "rgba(255,0,0,0)"}, "name": "S2<sub>neutral</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089, 0.089, 0.1259, 0.1753, 0.24713, 0.3515, 0.4967, 0.706, 0.9841, 1.454, 1.989], "y": [2.071174, 1.461109, 1.030757, 0.7157729999999999, 0.484557, 0.3338403, 0.2590154, 0.214017, 0.1567784, 0.1054551, 0.0948049, 0.1409216, 0.19226300000000002, 0.23950459999999998, 0.3139997, 0.45654300000000003, 0.675507, 0.9708429999999999, 1.3806910000000001, 1.911426]}, {"line": {"color": "rgba(255,220,0,1)", "dash": "dash", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.85, "size": 20, "symbol": "circle"}, "name": "S2<sub>neutral</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089], "y": [1.9913, 1.4209, 1.0008, 0.6956399999999999, 0.47055, 0.32392, 0.24925999999999998, 0.20314000000000002, 0.14885, 0.10013]}, {"fill": "toself", "fillcolor": "rgba(13,186,233,0.2)", "line": {"color": "rgba(255,0,0,0)"}, "name": "G1<sub>native</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089, 0.089, 0.1259, 0.1753, 0.24713, 0.3515, 0.4967, 0.706, 0.9841, 1.454, 1.989], "y": [2.6703020000000004, 1.7446300000000001, 1.194104, 0.7961499999999999, 0.525845, 0.395067, 0.28104, 0.24307060000000003, 0.1943625, 0.15586470000000002, 0.1445153, 0.1801975, 0.22688940000000002, 0.26524, 0.360053, 0.5013949999999999, 0.75295, 1.1186960000000001, 1.65817, 2.519698]}, {"line": {"color": "rgba(0,75,255,1)", "dash": "solid", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.85, "size": 20, "symbol": "square"}, "name": "G1<sub>native</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089], "y": [2.595, 1.7014, 1.1564, 0.77455, 0.51362, 0.37756, 0.27314, 0.23498000000000002, 0.18728, 0.15019000000000002]}, {"fill": "toself", "fillcolor": "rgba(2.5,187,180,0.2)", "line": {"color": "rgba(255,0,0,0)"}, "name": "S1<sub>native</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089, 0.089, 0.1259, 0.1753, 0.24713, 0.3515, 0.4967, 0.706, 0.9841, 1.454, 1.989], "y": [2.2187799999999998, 1.5220989999999999, 1.048132, 0.716999, 0.496843, 0.34194599999999997, 0.255963, 0.208476, 0.145466, 0.0961839, 0.07931210000000001, 0.125134, 0.185784, 0.229557, 0.312334, 0.455497, 0.6582210000000001, 0.964268, 1.402701, 2.00582]}, {"line": {"color": "rgba(24,231,234,1)", "dash": "solid", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.85, "size": 20, "symbol": "square"}, "name": "S1<sub>native</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089], "y": [2.1123, 1.4624, 1.0062, 0.68761, 0.47617, 0.32714, 0.24276, 0.19713, 0.1353, 0.087748]}, {"fill": "toself", "fillcolor": "rgba(0,248,205,0.2)", "line": {"color": "rgba(255,0,0,0)"}, "name": "S2<sub>native</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089, 0.089, 0.1259, 0.1753, 0.24713, 0.3515, 0.4967, 0.706, 0.9841, 1.454, 1.989], "y": [2.235038, 1.587559, 1.106639, 0.757887, 0.507059, 0.344612, 0.25378999999999996, 0.2085991, 0.14532969999999998, 0.0978096, 0.08772440000000001, 0.1333903, 0.1888409, 0.23324999999999999, 0.317888, 0.473841, 0.710953, 1.031161, 1.506241, 2.098162]}, {"line": {"color": "rgba(24,234,141,1)", "dash": "solid", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.85, "size": 20, "symbol": "square"}, "name": "S2<sub>native</sub>", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089], "y": [2.1666, 1.5469, 1.0689, 0.73442, 0.49045, 0.33125, 0.24352, 0.19872, 0.13935999999999998, 0.092767]}, {"line": {"color": "black"}, "marker": {"line": {"width": 2}, "size": 30, "symbol": "cross-open"}, "mode": "markers", "name": "Reference", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089], "y": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089]}],                        {"height": 1000, "hovermode": "x", "legend": {"font": {"color": "black", "size": 14}, "tracegroupgap": 300, "x": 1, "y": 1}, "margin": {"b": 0, "l": 0, "r": 0, "t": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"font": {"color": "white"}, "text": ""}, "width": 800, "xaxis": {"gridcolor": "lightsteelblue", "linecolor": "white", "range": [0, 2.1], "showticklabels": true, "tickfont": {"color": "black"}, "tickvals": [0.089, 0.1259, 0.1753, 0.24713, 0.3515, 0.4967, 0.706, 0.9841, 1.454, 1.989], "title": {"text": "Reference T1 (s)"}}, "yaxis": {"gridcolor": "lightsteelblue", "linecolor": "white", "showticklabels": true, "tickfont": {"color": "black"}, "tickmode": "array", "ticktext": ["R10", "R9", "R8", "R7", "R6", "R5", "R4", "R3", "R2", "R1"], "tickvals": [1.989, 1.454, 0.9841, 0.706, 0.4967, 0.3515, 0.24713, 0.1753, 0.1259, 0.089]}},                        {"responsive": true}                    ).then(function(){
+
+var gd = document.getElementById('b871a9bc-a591-41f9-8492-7d71ed38a489');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+</div>
+<div class="section" id="percent-measurement-errors-t1">
+<h2>Percent measurement errors (<code class="docutils literal notranslate"><span class="pre">∆T1</span></code>)<a class="headerlink" href="#percent-measurement-errors-t1" title="Permalink to this headline">¶</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p>Reproduces Figure 4c from the <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2021.12.27.474259v2">article</a>.</p>
+</div>
+<blockquote>
+<div><p>For VENUS, ∆T1 remains low for the physiologically relevant range (0.7 to 2s), whereas deviations reach up to 30.4% for vendor-native measurements.</p>
+</div></blockquote>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">sessions</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">cur_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">derivativesDir</span> <span class="o">+</span> <span class="s1">&#39;/sub-phantom/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="n">jj</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/stat/sub-phantom_ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="n">jj</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_stat_summary.csv&#39;</span><span class="p">)</span>
+    <span class="n">avg_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cur_csv</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">])</span>
+    <span class="n">std_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cur_csv</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">])</span>
+    <span class="n">cur_tag</span> <span class="o">=</span> <span class="n">sessions</span><span class="p">[</span><span class="n">jj</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+    <span class="c1"># Measurement error</span>
+    <span class="n">pcterr</span> <span class="o">=</span> <span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">pcterr</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">spheres</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">line_color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">],</span>
+        <span class="n">name</span><span class="o">=</span> <span class="n">convert_tag</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">],</span>
+        <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="n">line_sym</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">],</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.75</span><span class="p">),</span>
+        <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="n">line_dash</span><span class="p">[</span><span class="n">cur_tag</span><span class="p">]),</span>
+        <span class="n">line_shape</span><span class="o">=</span><span class="s1">&#39;vhv&#39;</span>
+    <span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">tracegroupgap</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)),</span><span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">axis_template</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">linecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+                     <span class="n">showticklabels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="n">gridcolor</span> <span class="o">=</span> <span class="s1">&#39;lightsteelblue&#39;</span>
+                    <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">axis_template</span><span class="p">,</span><span class="n">zerolinecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">zerolinewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">axis_template</span><span class="p">,</span><span class="n">zerolinecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">hovermode</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mi">70</span><span class="p">],</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;∆T1 (%)&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">tickmode</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">,</span><span class="n">tickvals</span><span class="o">=</span><span class="n">spheres</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">ticktext</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;R10&quot;</span><span class="p">,</span><span class="s2">&quot;R9&quot;</span><span class="p">,</span><span class="s2">&quot;R8&quot;</span><span class="p">,</span><span class="s2">&quot;R7&quot;</span><span class="p">,</span><span class="s2">&quot;R6&quot;</span><span class="p">,</span><span class="s2">&quot;R5&quot;</span><span class="p">,</span><span class="s2">&quot;R4&quot;</span><span class="p">,</span><span class="s2">&quot;R3&quot;</span><span class="p">,</span><span class="s2">&quot;R2&quot;</span><span class="p">,</span><span class="s2">&quot;R1&quot;</span><span class="p">],</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Reference Spheres (R1 - R10)&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_font_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="f691e6a4-6c5f-45bd-8653-5a9263052aee" class="plotly-graph-div" style="height:1000px; width:800px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("f691e6a4-6c5f-45bd-8653-5a9263052aee")) {                    Plotly.newPlot(                        "f691e6a4-6c5f-45bd-8653-5a9263052aee",                        [{"line": {"color": "rgba(255,8,30,1)", "dash": "dash", "shape": "vhv", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.75, "size": 20, "symbol": "circle"}, "name": "G1<sub>neutral</sub>", "type": "scatter", "x": [3.4590246354952106, 1.231086657496563, 0.45523828879178224, -6.769121813031146, -11.433460841554249, -13.883357041251765, -5.167320843280867, 9.09298345693098, 20.76250992851469, 30.64044943820225], "y": [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}, {"line": {"color": "rgba(255,117,0,1)", "dash": "dash", "shape": "vhv", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.75, "size": 20, "symbol": "circle"}, "name": "S1<sub>neutral</sub>", "type": "scatter", "x": [6.370035193564595, 0.412654745529574, 2.3879687023676532, -1.1898016997167087, -2.8004831890477218, -2.147937411095306, 6.664508558248701, 23.793496862521373, 25.48848292295473, 18.707865168539325], "y": [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}, {"line": {"color": "rgba(255,220,0,1)", "dash": "dash", "shape": "vhv", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.75, "size": 20, "symbol": "circle"}, "name": "S2<sub>neutral</sub>", "type": "scatter", "x": [0.11563599798893759, -2.276478679504808, 1.6969820140229588, -1.4674220963172855, -5.26474733239379, -7.84637268847795, 0.861894549427424, 15.881346263548204, 18.228752978554404, 12.505617977528091], "y": [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}, {"line": {"color": "rgba(0,75,255,1)", "dash": "solid", "shape": "vhv", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.75, "size": 20, "symbol": "square"}, "name": "G1<sub>native</sub>", "type": "scatter", "x": [30.467571644042234, 17.01513067400276, 17.508383294380664, 9.709631728045325, 3.4064827863901734, 7.413940256045527, 10.524824990895484, 34.04449515116943, 48.75297855440825, 68.75280898876407], "y": [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}, {"line": {"color": "rgba(24,231,234,1)", "dash": "solid", "shape": "vhv", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.75, "size": 20, "symbol": "square"}, "name": "S1<sub>native</sub>", "type": "scatter", "x": [6.199095022624421, 0.5777166437414005, 2.245706737120212, -2.6048158640226498, -4.133279645661364, -6.930298719772403, -1.7683000849755128, 12.452937820878486, 7.466243050039707, -1.4067415730336958], "y": [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}, {"line": {"color": "rgba(24,234,141,1)", "dash": "solid", "shape": "vhv", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.75, "size": 20, "symbol": "square"}, "name": "S2<sub>native</sub>", "type": "scatter", "x": [8.929110105580682, 6.38927097661623, 8.617010466416014, 4.025495750708216, -1.2583048117575957, -5.761024182076811, -1.46076963541456, 13.359954363947516, 10.691024622716418, 4.232584269662929], "y": [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}],                        {"height": 1000, "hovermode": "y", "legend": {"font": {"color": "black"}, "tracegroupgap": 300, "x": 1, "y": 1}, "margin": {"b": 0, "l": 0, "r": 0, "t": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"font": {"color": "black"}}, "width": 800, "xaxis": {"gridcolor": "lightsteelblue", "linecolor": "black", "range": [-18, 70], "showticklabels": true, "title": {"text": "\u2206T1 (%)"}, "zerolinecolor": "black", "zerolinewidth": 3}, "yaxis": {"gridcolor": "lightsteelblue", "linecolor": "black", "showticklabels": true, "tickmode": "array", "ticktext": ["R10", "R9", "R8", "R7", "R6", "R5", "R4", "R3", "R2", "R1"], "tickvals": [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], "title": {"text": "Reference Spheres (R1 - R10)"}, "zerolinecolor": "black"}},                        {"responsive": true}                    ).then(function(){
+
+var gd = document.getElementById('f691e6a4-6c5f-45bd-8653-5a9263052aee');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+</div>
+<div class="section" id="averaged-t1-comparison">
+<h2>Averaged  <code class="docutils literal notranslate"><span class="pre">∆T1</span></code> comparison<a class="headerlink" href="#averaged-t1-comparison" title="Permalink to this headline">¶</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Note</p>
+<p>Reproduces Figure 4d from the <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2021.12.27.474259v2">article</a>.</p>
+</div>
+<p>T1 values are averaged over S1-2 (SNATIVE and SVENUS, green square and orange circle) and according to the acquisition type (NATIVE and VENUS, black square and black circle). Inter-vendor percent differences are displayed on hover.</p>
+<blockquote>
+<div><p>In addition to the prominent improvement in G1 accuracy, S<sub>VENUS</sub> is closer to the reference than S<sub>NATIVE</sub> for most of the relevant range (∆T1 of 7.6, 3.5, 5.4, 0.7% and 3.2, 0.9, 2, 1.3% for S<sub>NATIVE</sub> and S<sub>VENUS</sub>, respectively).</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>In conclusion, VENUS reduces between-vendor differences with an overall accuracy improvement.</strong></p>
+</div></blockquote>
+<p>You can change the range (<code class="docutils literal notranslate"><span class="pre">lastN</span></code>) (up to 9) in the following code cell.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sessions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;vendor750rev&#39;</span><span class="p">,</span><span class="s1">&#39;vendorPRIrev&#39;</span><span class="p">,</span><span class="s1">&#39;vendorSKYrev&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;rth750rev&#39;</span><span class="p">,</span><span class="s1">&#39;rthPRIrev&#39;</span><span class="p">,</span><span class="s1">&#39;rthSKYrev&#39;</span><span class="p">]</span>
+
+<span class="c1"># Set to R7-R10</span>
+<span class="n">lastN</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">rth750</span> <span class="o">=</span> <span class="n">derivativesDir</span> <span class="o">+</span> <span class="s1">&#39;/sub-phantom/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/stat/sub-phantom_ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_stat_summary.csv&#39;</span>
+<span class="n">rthPRI</span> <span class="o">=</span> <span class="n">derivativesDir</span> <span class="o">+</span> <span class="s1">&#39;/sub-phantom/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/stat/sub-phantom_ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_stat_summary.csv&#39;</span>
+<span class="n">rthSKY</span> <span class="o">=</span> <span class="n">derivativesDir</span> <span class="o">+</span> <span class="s1">&#39;/sub-phantom/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/stat/sub-phantom_ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_stat_summary.csv&#39;</span>
+<span class="n">rth750</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">rth750</span><span class="p">)</span>
+<span class="n">rthPRI</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">rthPRI</span><span class="p">)</span>
+<span class="n">rthSKY</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">rthSKY</span><span class="p">)</span>
+    
+<span class="n">avg_array_ge</span> <span class="o">=</span> <span class="n">rth750</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">]</span>
+<span class="n">std_array_ge</span> <span class="o">=</span> <span class="n">rth750</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">]</span>
+<span class="n">cur_tag_ge</span> <span class="o">=</span> <span class="s1">&#39;neutral G1&#39;</span>
+
+<span class="n">avg_array_sie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">rthPRI</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">],</span><span class="n">rthSKY</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">std_array_sie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">rthPRI</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">],</span><span class="n">rthSKY</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cur_tag</span> <span class="o">=</span> <span class="s1">&#39;neutral S1-2&#39;</span>
+
+<span class="n">avg_array_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">rth750</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">],</span><span class="n">rthPRI</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">],</span><span class="n">rthSKY</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">std_array_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">rthPRI</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">],</span><span class="n">rthSKY</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="n">cur_tag</span> <span class="o">+</span> <span class="s1">&#39;_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">avg_array</span>
+<span class="n">df</span><span class="p">[</span><span class="n">cur_tag</span> <span class="o">+</span> <span class="s1">&#39;_std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">std_array</span>
+<span class="n">upper_sie</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_sie</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array_sie</span><span class="p">)))</span>
+<span class="n">lower_sie</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_sie</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array_sie</span><span class="p">)))</span>
+<span class="n">upper_ge</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_ge</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array_ge</span><span class="p">)))</span>
+<span class="n">lower_ge</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_ge</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array_ge</span><span class="p">)))</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;markers&#39;</span><span class="p">,</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Reference&#39;</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;cross-open&#39;</span><span class="p">,</span><span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">avg_array_sie</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span> <span class="s1">&#39;neutral S1-2&#39;</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;circle&#39;</span><span class="p">,</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">),</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">&#39;dash&#39;</span><span class="p">),</span>
+    <span class="n">line_shape</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span>
+    <span class="n">customdata</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_sie</span><span class="p">[:</span><span class="n">lastN</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">hovertemplate</span><span class="o">=</span><span class="s1">&#39;&lt;br&gt;%</span><span class="si">{y}</span><span class="s1">,&lt;b&gt;∆T1:&lt;/b&gt;%</span><span class="si">{customdata}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">hoverlabel</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">namelength</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">avg_array_ge</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;rgba(202,73,68,1)&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span> <span class="s1">&#39;neutral G1&#39;</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;circle&#39;</span><span class="p">,</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">),</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">&#39;dash&#39;</span><span class="p">),</span>
+    <span class="n">line_shape</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span>
+    <span class="n">customdata</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_ge</span><span class="p">[:</span><span class="n">lastN</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">hovertemplate</span><span class="o">=</span><span class="s1">&#39;&lt;br&gt;%</span><span class="si">{y}</span><span class="s1">,&lt;b&gt;∆T1:&lt;/b&gt;%</span><span class="si">{customdata}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">hoverlabel</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">namelength</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">avg_array_all</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;rgba(0,0,0,1)&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span> <span class="s1">&#39;neutral&#39;</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;circle&#39;</span><span class="p">,</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">),</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">&#39;dash&#39;</span><span class="p">),</span>
+    <span class="n">line_shape</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span>
+    <span class="n">customdata</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_all</span><span class="p">[:</span><span class="n">lastN</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">hovertemplate</span><span class="o">=</span><span class="s1">&#39;&lt;br&gt;%</span><span class="si">{y}</span><span class="s1">,&lt;b&gt;∆T1:&lt;/b&gt;%</span><span class="si">{customdata}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">hoverlabel</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">namelength</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">))</span>
+<span class="n">vendor750</span> <span class="o">=</span> <span class="n">derivativesDir</span> <span class="o">+</span> <span class="s1">&#39;/sub-phantom/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/stat/sub-phantom_ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_stat_summary.csv&#39;</span>
+<span class="n">vendorPRI</span> <span class="o">=</span> <span class="n">derivativesDir</span> <span class="o">+</span> <span class="s1">&#39;/sub-phantom/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/stat/sub-phantom_ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_stat_summary.csv&#39;</span>
+<span class="n">vendorSKY</span> <span class="o">=</span> <span class="n">derivativesDir</span> <span class="o">+</span> <span class="s1">&#39;/sub-phantom/&#39;</span> <span class="o">+</span> <span class="s1">&#39;ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;/stat/sub-phantom_ses-&#39;</span> <span class="o">+</span> <span class="n">sessions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_stat_summary.csv&#39;</span>
+<span class="n">vendor750</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">vendor750</span><span class="p">)</span>
+<span class="n">vendorPRI</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">vendorPRI</span><span class="p">)</span>
+<span class="n">vendorSKY</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">vendorSKY</span><span class="p">)</span>
+    
+<span class="n">avg_array_ge</span> <span class="o">=</span> <span class="n">vendor750</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">]</span>
+<span class="n">std_array_ge</span> <span class="o">=</span> <span class="n">vendor750</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">]</span>
+
+<span class="n">avg_array_sie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">vendorPRI</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">],</span><span class="n">vendorSKY</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">std_array_sie</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">vendorPRI</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">],</span><span class="n">vendorSKY</span><span class="p">[</span><span class="s1">&#39;T1 (std)&#39;</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cur_tag</span> <span class="o">=</span> <span class="s1">&#39;neutral&#39;</span>
+
+<span class="n">avg_array_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">vendor750</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">],</span><span class="n">vendorPRI</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">],</span><span class="n">vendorSKY</span><span class="p">[</span><span class="s1">&#39;T1 (mean)&#39;</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="n">cur_tag</span> <span class="o">+</span> <span class="s1">&#39;_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">avg_array</span>
+<span class="n">df</span><span class="p">[</span><span class="n">cur_tag</span> <span class="o">+</span> <span class="s1">&#39;_std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">std_array</span>
+<span class="n">upper_sie</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_sie</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array_sie</span><span class="p">)))</span>
+<span class="n">lower_sie</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_sie</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array_sie</span><span class="p">)))</span>
+<span class="n">upper_ge</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_ge</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array_ge</span><span class="p">)))</span>
+<span class="n">lower_ge</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_ge</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_array_ge</span><span class="p">)))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">avg_array_sie</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span> <span class="s1">&#39;native S1-2&#39;</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;square&#39;</span><span class="p">,</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">),</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">),</span>
+    <span class="n">line_shape</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span>
+    <span class="n">customdata</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_sie</span><span class="p">[:</span><span class="n">lastN</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">hovertemplate</span><span class="o">=</span><span class="s1">&#39;&lt;br&gt;%</span><span class="si">{y}</span><span class="s1">, &lt;b&gt;∆T1:&lt;/b&gt;%</span><span class="si">{customdata}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">hoverlabel</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">namelength</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">avg_array_ge</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;rgba(31,119,180,0.8)&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span> <span class="s1">&#39;native G1&#39;</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;square&#39;</span><span class="p">,</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">),</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">),</span>
+    <span class="n">line_shape</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span>
+    <span class="n">customdata</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_ge</span><span class="p">[:</span><span class="n">lastN</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">hovertemplate</span><span class="o">=</span><span class="s1">&#39;&lt;br&gt;%</span><span class="si">{y}</span><span class="s1">, &lt;b&gt;∆T1:&lt;/b&gt;%</span><span class="si">{customdata}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">hoverlabel</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">namelength</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">avg_array_all</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span>
+    <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;rgba(0,0,0,1)&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span> <span class="s1">&#39;native&#39;</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;square&#39;</span><span class="p">,</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">),</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">),</span>
+    <span class="n">line_shape</span><span class="o">=</span><span class="s1">&#39;spline&#39;</span><span class="p">,</span>
+    <span class="n">customdata</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">avg_array_all</span><span class="p">[:</span><span class="n">lastN</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">refMean</span><span class="p">[:</span><span class="n">lastN</span><span class="p">]))</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">hovertemplate</span><span class="o">=</span><span class="s1">&#39;&lt;br&gt;%</span><span class="si">{y}</span><span class="s1">,&lt;b&gt;∆T1:&lt;/b&gt;%</span><span class="si">{customdata}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">hoverlabel</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">namelength</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">axis_template</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">linecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+                     <span class="n">showticklabels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">),</span> 
+                     <span class="n">gridcolor</span> <span class="o">=</span> <span class="s1">&#39;lightsteelblue&#39;</span><span class="p">,</span>
+                     <span class="n">tickvals</span> <span class="o">=</span> <span class="n">refMean</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],)</span>
+<span class="n">tickvals</span><span class="o">=</span><span class="n">refMean</span>
+<span class="n">ticktext</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;R10&quot;</span><span class="p">,</span><span class="s2">&quot;R9&quot;</span><span class="p">,</span><span class="s2">&quot;R8&quot;</span><span class="p">,</span><span class="s2">&quot;R7&quot;</span><span class="p">,</span><span class="s2">&quot;R6&quot;</span><span class="p">,</span><span class="s2">&quot;R5&quot;</span><span class="p">,</span><span class="s2">&quot;R4&quot;</span><span class="p">,</span><span class="s2">&quot;R3&quot;</span><span class="p">,</span><span class="s2">&quot;R2&quot;</span><span class="p">,</span><span class="s2">&quot;R1&quot;</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">axis_template</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Reference T1 (s)&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">axis_template</span><span class="p">,</span><span class="n">tickmode</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="p">,</span><span class="n">tickvals</span><span class="o">=</span><span class="n">tickvals</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span><span class="n">ticktext</span><span class="o">=</span><span class="n">ticktext</span><span class="p">[:</span><span class="n">lastN</span><span class="p">],</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Reference Spheres&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">hovermode</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="0461fa12-817b-48db-acb8-8f02670e0386" class="plotly-graph-div" style="height:1100px; width:800px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0461fa12-817b-48db-acb8-8f02670e0386")) {                    Plotly.newPlot(                        "0461fa12-817b-48db-acb8-8f02670e0386",                        [{"line": {"color": "black"}, "marker": {"line": {"width": 2}, "size": 30, "symbol": "cross-open"}, "mode": "markers", "name": "Reference", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706], "y": [1.989, 1.454, 0.9841, 0.706]}, {"customdata": [3.24, -0.93, 2.04, -1.33], "hoverlabel": {"namelength": -1}, "hovertemplate": "<br>%{y},<b>\u2206T1:</b>%{customdata}", "line": {"color": "orange", "dash": "dash", "shape": "spline", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.9, "size": 20, "symbol": "circle"}, "name": "neutral S1-2", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706], "y": [2.0535, 1.44045, 1.0042, 0.69662]}, {"customdata": [3.46, 1.23, 0.46, -6.77], "hoverlabel": {"namelength": -1}, "hovertemplate": "<br>%{y},<b>\u2206T1:</b>%{customdata}", "line": {"color": "rgba(202,73,68,1)", "dash": "dash", "shape": "spline", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.9, "size": 20, "symbol": "circle"}, "name": "neutral G1", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706], "y": [2.0578, 1.4719, 0.9885799999999999, 0.6582100000000001]}, {"customdata": [3.31, -0.21, 1.51, -3.14], "hoverlabel": {"namelength": -1}, "hovertemplate": "<br>%{y},<b>\u2206T1:</b>%{customdata}", "line": {"color": "rgba(0,0,0,1)", "dash": "dash", "shape": "spline", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.9, "size": 5, "symbol": "circle"}, "name": "neutral", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706], "y": [2.054933333333333, 1.4509333333333334, 0.9989933333333333, 0.6838166666666666]}, {"customdata": [7.56, 3.48, 5.43, 0.71], "hoverlabel": {"namelength": -1}, "hovertemplate": "<br>%{y}, <b>\u2206T1:</b>%{customdata}", "line": {"color": "green", "dash": "solid", "shape": "spline", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.9, "size": 20, "symbol": "square"}, "name": "native S1-2", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706], "y": [2.13945, 1.5046499999999998, 1.03755, 0.711015]}, {"customdata": [30.47, 17.02, 17.51, 9.71], "hoverlabel": {"namelength": -1}, "hovertemplate": "<br>%{y}, <b>\u2206T1:</b>%{customdata}", "line": {"color": "rgba(31,119,180,0.8)", "dash": "solid", "shape": "spline", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.9, "size": 20, "symbol": "square"}, "name": "native G1", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706], "y": [2.595, 1.7014, 1.1564, 0.77455]}, {"customdata": [15.2, 7.99, 9.46, 3.71], "hoverlabel": {"namelength": -1}, "hovertemplate": "<br>%{y},<b>\u2206T1:</b>%{customdata}", "line": {"color": "rgba(0,0,0,1)", "dash": "solid", "shape": "spline", "width": 2}, "marker": {"line": {"color": "black", "width": 1.5}, "opacity": 0.9, "size": 5, "symbol": "square"}, "name": "native", "type": "scatter", "x": [1.989, 1.454, 0.9841, 0.706], "y": [2.2913, 1.5702333333333334, 1.0771666666666668, 0.7321933333333334]}],                        {"height": 1100, "hovermode": "x", "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "autotypenumbers": "strict", "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "width": 800, "xaxis": {"gridcolor": "lightsteelblue", "linecolor": "black", "showticklabels": true, "tickfont": {"color": "black"}, "tickvals": [0.089, 0.1259, 0.1753, 0.24713, 0.3515, 0.4967, 0.706, 0.9841, 1.454, 1.989], "title": {"text": "Reference T1 (s)"}}, "yaxis": {"gridcolor": "lightsteelblue", "linecolor": "black", "showticklabels": true, "tickfont": {"color": "black"}, "tickmode": "array", "ticktext": ["R10", "R9", "R8", "R7"], "tickvals": [1.989, 1.454, 0.9841, 0.706], "title": {"text": "Reference Spheres"}}},                        {"responsive": true}                    ).then(function(){
+
+var gd = document.getElementById('0461fa12-817b-48db-acb8-8f02670e0386');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "qmrlab/venus",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="index.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Introduction</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="invivo_python.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><code class="docutils literal notranslate"><span class="pre">T1</span></code>, <code class="docutils literal notranslate"><span class="pre">MTR</span></code> and <code class="docutils literal notranslate"><span class="pre">MTsat</span></code> in-vivo</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Agah Karakuzu, Labonny Biswas, Julien Cohen-Adad, Nikola Stikov<br/>
+        
+            &copy; Copyright 2022.<br/>
+          <div class="extra_footer">
+            Agah Karakuzu
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

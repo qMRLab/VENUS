@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; Vendor-neutral sequences (VENUS) and multi-center reproducibility of qMRI</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="T1 accuracy &amp; inter-vendor agreement" href="phantom_python.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/venus_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Vendor-neutral sequences (VENUS) and multi-center reproducibility of qMRI</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Phantom
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="phantom_python.html">
+   T1 accuracy &amp; inter-vendor agreement
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  In-vivo Distributions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="invivo_python.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     T1
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MTR
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     MTsat
+    </span>
+   </code>
+   in-vivo
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  In-vivo Stats
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="invivo_Rstat.html">
+   Shift function analysis
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/qmrlab/venus"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/qmrlab/venus/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-venus">
+   What is VENUS?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#native-vs-venus-does-it-matter-to-the-measurement-stability">
+   NATIVE vs VENUS: Does it matter to the measurement stability?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-answer-is-yes">
+   The answer is yes!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-the-data-and-derivatives">
+   About the data and derivatives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p><em>Agah Karakuzu, Labonny Biswas, Julien Cohen-Adad, Nikola Stikov</em></p>
+<br>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1280px-R_logo.svg.png" width="50px"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" width="38px"/></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<center><img src="https://www.ismrm.org/17/program_files/images/summa-ribbon.png" width="150px"/></center>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">🏅  Interact with, explore and reproduce our findings! 🏅</p>
+<p>The following pages of this Jupyter Book encapsulates the code, data and runtime (<code class="docutils literal notranslate"><span class="pre">R</span></code> and <code class="docutils literal notranslate"><span class="pre">Python</span></code>) for you to explore our findings using interactive figures.</p>
+<p>You can modify the code, and re-generate the outputs in your web browser without installing or downloading anything to your computer!</p>
+<p>If you have any questions or comments, feel free to open an issue by clicking the GitHub icon at the top of this page.👆</p>
+</div>
+<div class="section" id="what-is-venus">
+<h2>What is VENUS?<a class="headerlink" href="#what-is-venus" title="Permalink to this headline">¶</a></h2>
+<p>VENUS is the acronym of our vendor-neutral <a class="reference external" href="https://qmrlab.org">qMRLab</a> workflow that begins with the acquisition of qMRI data using <a class="reference external" href="https://github.com/qmrlab/pulse_sequences">open-source &amp; vendor-neutral pulse sequences</a> and follows with the post-processing using data-driven and container-mediated <a class="reference external" href="https://github.com/qmrlab/qmrflow">qMRFLow</a> pipelines.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/banner.jpg"><img alt="_images/banner.jpg" class="bg-primary mb-1 align-center" src="_images/banner.jpg" style="width: 800px;" /></a>
+<p>Open-source and vendor-neutral pulse sequences are developed as <a class="reference external" href="https://www.heartvista.ai/for-research">RTHawk</a> applications, that can be run on most GE and Siemens clinical scanners.</p>
+</div>
+<div class="section" id="native-vs-venus-does-it-matter-to-the-measurement-stability">
+<h2>NATIVE vs VENUS: Does it matter to the measurement stability?<a class="headerlink" href="#native-vs-venus-does-it-matter-to-the-measurement-stability" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this study was to test whether VENUS can improve <strong>inter-vendor</strong> reproducibility of <code class="docutils literal notranslate"><span class="pre">T1</span></code>, <code class="docutils literal notranslate"><span class="pre">MTR</span></code> and <code class="docutils literal notranslate"><span class="pre">MTSat</span></code> measurements across three scanners by two vendors, in phantoms and in-vivo.</p>
+<p>To test this, we developed a vendor-neutral 3D-SPGR sequence, then compared measurement stability between scanners using VENUS and vendor-native (NATIVE) implementations.</p>
+<p><strong>Toggle the tabs for details:</strong></p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="7f25c57f-81d4-4682-aac3-08d418338da4" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
+</input><label class="tabbed-label" for="7f25c57f-81d4-4682-aac3-08d418338da4">
+Scanners</label><div class="tabbed-content docutils">
+<ul class="simple">
+<li><p><strong>G1</strong> GE Discovery 750w (3T)</p></li>
+<li><p><strong>S1</strong> Siemens Prisma (3T)</p></li>
+<li><p><strong>S2</strong> Siemens Skyra (3T)</p></li>
+</ul>
+</div>
+<input id="41a25865-c69e-47f4-9fe4-1d06cc6accba" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
+</input><label class="tabbed-label" for="41a25865-c69e-47f4-9fe4-1d06cc6accba">
+NATIVE implementation</label><div class="tabbed-content docutils">
+<ul class="simple">
+<li><p><strong>G1</strong> SPGR (<code class="docutils literal notranslate"><span class="pre">DV25.0_R02_1549.b</span></code>)</p></li>
+<li><p><strong>S1</strong> FLASH (<code class="docutils literal notranslate"><span class="pre">N4_VE11C_LATEST_20160120</span></code>)</p></li>
+<li><p><strong>S2</strong> FLASH (<code class="docutils literal notranslate"><span class="pre">N4_VE11C_LATEST_20160120</span></code>)</p></li>
+</ul>
+</div>
+<input id="b18198bd-9868-4dc6-b1da-3530d84fb2e0" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
+</input><label class="tabbed-label" for="b18198bd-9868-4dc6-b1da-3530d84fb2e0">
+VENUS implementation</label><div class="tabbed-content docutils">
+<ul class="simple">
+<li><p><strong>G1</strong> <a class="reference external" href="https://github.com/qMRLab/mt_sat/releases/tag/v1.0">qMRPullseq/mt_sat</a> (<code class="docutils literal notranslate"><span class="pre">v1.0</span></code> on <code class="docutils literal notranslate"><span class="pre">RTHawk</span> <span class="pre">v3</span></code>)</p></li>
+<li><p><strong>S1</strong> <a class="reference external" href="https://github.com/qMRLab/mt_sat/releases/tag/v1.0">qMRPullseq/mt_sat</a> (<code class="docutils literal notranslate"><span class="pre">v1.0</span></code> on <code class="docutils literal notranslate"><span class="pre">RTHawk</span> <span class="pre">v3</span></code>)</p></li>
+<li><p><strong>S2</strong> <a class="reference external" href="https://github.com/qMRLab/mt_sat/releases/tag/v1.0">qMRPullseq/mt_sat</a> (<code class="docutils literal notranslate"><span class="pre">v1.0</span></code> on <code class="docutils literal notranslate"><span class="pre">RTHawk</span> <span class="pre">v3</span></code>)</p></li>
+</ul>
+</div>
+<input id="4fabad89-e55c-45cc-ae35-34b660ad5f28" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
+</input><label class="tabbed-label" for="4fabad89-e55c-45cc-ae35-34b660ad5f28">
+Phantom</label><div class="tabbed-content docutils">
+<ul class="simple">
+<li><p><a class="reference external" href="https://qmri.com/contrast-mri/">ISMRM/NIST System Phantom</a> (SN = 42)</p></li>
+</ul>
+</div>
+<input id="88c116be-9ba6-46c2-8091-90643a3d91bc" name="af9735fc-6509-4bab-86a2-f8ba1af7219b" type="radio">
+</input><label class="tabbed-label" for="88c116be-9ba6-46c2-8091-90643a3d91bc">
+In-vivo</label><div class="tabbed-content docutils">
+<ul class="simple">
+<li><p>3 healthy participants volunteered for data collection.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="the-answer-is-yes">
+<h2>The answer is yes!<a class="headerlink" href="#the-answer-is-yes" title="Permalink to this headline">¶</a></h2>
+<p>Our results show that VENUS can <strong>significantly</strong> decrease inter-vendor variability of <code class="docutils literal notranslate"><span class="pre">T1</span></code>, <code class="docutils literal notranslate"><span class="pre">MTR</span></code> and <code class="docutils literal notranslate"><span class="pre">MTsat</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Implications</p>
+<p>VENUS approach to qMRI has several implications for qMRI research and for the reliability of multicenter clinical trials.</p>
+<p><strong>This Jupyter Book supports that by highlighting the core idea of VENUS:</strong></p>
+<blockquote class="epigraph">
+<div><p>To deliver what it promises, quantitative MRI needs to dispense with undisclosed implementation details, from scanner to publication.</p>
+</div></blockquote>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">See Also</p>
+<p>This work has been accepted for publication in Magnetic Resonance in Medicine. The last version of the preprint is available <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2021.12.27.474259v2">here</a>.</p>
+</div>
+</div>
+<div class="section" id="about-the-data-and-derivatives">
+<h2>About the data and derivatives<a class="headerlink" href="#about-the-data-and-derivatives" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://osf.io/5n3cu/"><img alt="" src="https://img.shields.io/badge/DATA%20DOI-10.17605%2FOSF.IO%2F5N3CU-blue" /></a></p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/de/BIDS_Logo.png" alt="drawing" width="220px"/>
+<p>The dataset downloaded to this Jupyter Book includes the raw data and first-order derivatives, <strong>following the <a class="reference external" href="https://www.medrxiv.org/content/10.1101/2021.10.22.21265382v3">qMRI-BIDS data standard</a></strong>.</p>
+<p>All the figures and statistical analyses were based on the first-order derivatives.</p>
+<img src="https://github.com/qMRLab/qMRFlow/raw/master/assets/qmrflow_small.png" alt="drawing" width="200px"/>
+<p>To reproduce the first-order derivatives from the raw data, you need to run <code class="docutils literal notranslate"><span class="pre">qMRFlow</span></code> pipelines using Nextflow.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click the button to reveal qMRFlow instructions.</p>
+<ol>
+<li><p>Install <a class="reference external" href="https://www.nextflow.io/docs/latest/getstarted.html">Nextflow</a></p></li>
+<li><p>Pull Docker images:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker pull qmrlab/minimal:v2.5.0b
+docker pull qmrlab/antsfsl:latest
+</pre></div>
+</div>
+</li>
+<li><p>Download the <a class="reference external" href="https://osf.io/5n3cu/">dataset</a></p></li>
+<li><p>Run</p></li>
+</ol>
+<ul>
+<li><p>To process the phantom data:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /to/VENUS
+nextflow run venus-process-phantom.nf --bids /set/to/bids/directory -with-report phantom-report.html
+</pre></div>
+</div>
+</li>
+<li><p>To process the in-vivo data:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /to/VENUS
+nextflow run venus-process-invivo.nf --bids /set/to/bids/directory -with-report invivo-report.html
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>If Docker is not available</strong></p>
+<p>You need to make sure that following dependencies are installed on your local machine/environment and accessible via shell (i.e. added to the system PATH):</p>
+<ul class="simple">
+<li><p>qMRLab v2.4.1</p></li>
+<li><p>ANTs</p></li>
+<li><p>FSL</p></li>
+<li><p>MATLAB or Octave</p></li>
+</ul>
+<p>In the config file, set the following parameter to <code class="docutils literal notranslate"><span class="pre">false</span></code> at <a class="reference external" href="https://github.com/qMRLab/VENUS/blob/90df3f94aa0c07ee2a116b9ad5785b2b0057fa60/nextflow.config#L131-L133">this line</a>, this will enforce workflow to look for local executables.</p>
+<p>Next, set MATLAB or Octave executable path and qMRLab directory at <a class="reference external" href="https://github.com/qMRLab/VENUS/blob/90df3f94aa0c07ee2a116b9ad5785b2b0057fa60/nextflow.config#L144-L148">this line</a></p>
+<p>Finally, execute the workflows using the <code class="docutils literal notranslate"><span class="pre">nextflow</span> <span class="pre">run</span></code> commands above.</p>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">qMRFLow execution reports</p>
+<ul class="simple">
+<li><p>📑 Click <a href="phantom-report.html">here</a> to see the report for the phantom pipeline</p></li>
+<li><p>📑 Click <a href="qmrflow-exec-report.html">here</a> to see the report for the in-vivo pipeline</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>This research was undertaken thanks, in part, to funding from the Canada First ResearchExcellence Fund through the TransMedTech Institute. The work is also funded in part by theMontreal Heart Institute Foundation, Canadian Open Neuroscience Platform (Brain CanadaPSG), Quebec Bio-imaging Network (NS, 8436-0501 and JCA, 5886, 35450), Natural Sciencesand Engineering Research Council of Canada (NS, 2016-06774 and JCA, RGPIN-2019-07244),Fonds de Recherche du Québec (JCA, 2015-PR-182754), Fonds de Recherche du Québec- Santé (NS, FRSQ-36759, FRSQ-35250 and JCA, 28826), Canadian Institute of HealthResearch (JCA, FDN-143263 and GBP, FDN-332796), Canada Research Chair in QuantitativeMagnetic Resonance Imaging (950-230815), CAIP Chair in Health Brain Aging, CourtoisNeuroMod project and International Society for Magnetic Resonance in Medicine (ISMRMResearch Exchange Grant).</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "qmrlab/venus",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+     <div id="next">
+        <a class="right-next" href="phantom_python.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">T1 accuracy &amp; inter-vendor agreement</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Agah Karakuzu, Labonny Biswas, Julien Cohen-Adad, Nikola Stikov<br/>
+        
+            &copy; Copyright 2022.<br/>
+          <div class="extra_footer">
+            Agah Karakuzu
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
