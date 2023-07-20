@@ -15,4 +15,4 @@ dependencies:
     - tables==3.5.2
     - urllib3==1.24.2
     - repo2data
-    - jupyter-book==0.14.0
+    - jupyter-book==0.12.1
