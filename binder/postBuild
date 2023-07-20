@@ -1,2 +1,1 @@
-Rscript -e 'devtools::install_github("GRousselet/rogme")'
 jupyter labextension install jupyterlab-plotly
