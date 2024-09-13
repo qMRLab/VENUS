@@ -1,3 +1,4 @@
 { "src": "http://osf.io/va2jw/download",
-  "dst": "/tmp", 
-  "projectName": "VENUS"}
+  "dst": "/tmp",
+  "doi": "10.17605/OSF.IO/5N3CU",
+  "projectName": "venus-data"}
