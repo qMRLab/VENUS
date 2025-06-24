@@ -12,9 +12,11 @@ nextflow.iml
 # C extensions
 *.so
 
+data/
 # Distribution / packaging
 .Python
 build/
+_build/
 develop-eggs/
 dist/
 downloads/

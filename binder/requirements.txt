@@ -1,0 +1,7 @@
+matplotlib
+pandas
+numpy
+plotly
+scipy
+tables
+urllib3

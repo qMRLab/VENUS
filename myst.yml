@@ -1,0 +1,105 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  title: 'Vendor-neutral sequences and their implications for the reproducibility of quantitative MRI'
+  authors:
+    - name: Agah Karakuzu
+      orcid: 0000-0001-7283-271X
+      affiliations: polymtl; mhi
+      corresponding: true
+      email: agah.karakuzu@polymtl.ca
+      twitter: agahkarakuzu
+      equal_contributor: true
+      url: https://agah.dev
+      github: agahkarakuzu
+      roles:
+        - Conceptualization
+        - Writing – original draft
+    - name: Labonny Biswas
+      affiliations: uoft
+    - name: Julien Cohen-Adad
+      orcid: 0000-0003-3662-9532
+      affiliations: polymtl; unf; mila
+    - name: Nikola Stikov
+      orcid: 0000-0002-8480-5230
+      affiliations: polymtl; mhi; macedonia
+  affiliations:
+    - id: polymtl
+      institution: NeuroPoly Lab, Polytechnique Montreal
+      ror: https://ror.org/05f8d4e86
+      isni: 0000 0004 0435 3292
+      department: Electrical Engineering
+      address: 2500 Chem. de Polytechnique
+      city: Montreal
+      region: Quebec
+      country: Canada
+      postal_code: H3T 1J4
+      phone: 1 (514) 340-4711
+    - id: mhi
+      institution: Montreal Heart Institute
+      ror: https://ror.org/03vs03g62
+      isni: 0000 0000 8995 9090
+      address: 5000 Rue Belanger
+      city: Montreal
+      region: Quebec
+      country: Canada
+      postal_code: H1T 1C8
+    - id: uoft
+      institution: Sunnybrook Research Institute
+      ror: https://ror.org/05n0tzs53
+      city: Toronto
+      region: Ontario
+      country: Canada
+    - id: unf
+      institution: Functional Neuroimaging Unit, CRIUGM
+      ror: https://ror.org/0161xgx34
+      city: Montreal
+      region: Quebec
+      country: Canada
+    - id: mila
+      institution: Mila - Quebec Artificial Intelligence Institute
+      ror: https://ror.org/05c22rx21
+      city: Montreal
+      region: Quebec
+      country: Canada
+    - id: macedonia
+      name: Center for Advanced Interdisciplinary Research, University Ss Cyril and Methodius in Skopje
+      ror: https://ror.org/02wk2vx54
+      isni: 0000 0001 0708 5391
+      address:  Boulevard Goce Delchev 9
+      city: Skopje
+      country: North Macedonia
+      postal_code: 1000
+  keywords:
+    - quantitative MRI
+    - vendor-neutral 
+    - reproducible measurements
+    - precision mri
+    - magnetization transfer
+    - relaxometry
+  github: https://github.com/agahkarakuzu/woven
+  banner: banner.jpg
+  venue: Neurolibre #Production will override this.
+  subject: Living Preprint # Production will override this.
+  numbering:
+    headings: true
+  doi: 10.55458/neurolibre.xxxxx # Production will override this.
+  open_access: true
+  license:
+    content: CC-BY-4.0
+    code: MIT
+  abbreviations:
+    MTR: Magnetization Transfer Ratio
+    MTsat: Magnetization Transfer Saturation
+    ISMRM: International Society for Magnetic Resonance in Medicine
+    NIST: National Institute of Standards and Technology
+  toc:
+    - file: paper.md
+    - file: notebooks/invivo_python.ipynb
+    - file: notebooks/phantom_python.ipynb
+  exclude:
+    - README.md
+  bibliography:
+    - paper.bib
+site:
+  template: article-theme
