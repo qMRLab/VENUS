@@ -1,3 +1,6 @@
+---
+title: Vendor-neutral sequences and their implications for the reproducibility of quantitative MRI
+---
 
 # Abstract
 
@@ -5,7 +8,7 @@ This living preprint encapsulates the code, data and runtime (`R` and `Python`) 
 
 {button}`📄 VENUS article (MRM) <https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.29292>`
 
-# Introduction
+# 🎬 Introduction
 
 :::{tip} Tip
 
@@ -373,7 +376,7 @@ Therefore, the first decile on Fig. 4 is below and the last decile is above the 
 For a more detailed explanation on shift functions, please see this [blog post](https://garstats.wordpress.com/2016/07/12/shift-function/) by Guillaume A. Rousselet.
 :::
 
-## What about hierarchical shift functions? 
+### What about hierarchical shift functions? 
 
 Hierarchical shift function (HSF) is an extension of the shift function analysis for the comparison of dependent distributions across multiple participants.
 
@@ -454,7 +457,7 @@ Paired comparison of difference scores between VENUS and NATIVE implementations.
 
 :::
 
-# Conclusion
+# 🏁 Conclusion
 
 We conclude that vendor-neutral workflows are feasible and compatible with clinical MRI scanners. The significant reduction of inter-vendor variability using vendor-neutral sequences has important implications for qMRI research and for the reliability of multicenter clinical trials.
 
