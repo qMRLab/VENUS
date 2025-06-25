@@ -77,7 +77,13 @@ project:
     - precision mri
     - magnetization transfer
     - relaxometry
-  github: https://github.com/agahkarakuzu/woven
+  github: https://github.com/qMRLab/VENUS
+  binder: htttps://terrarium.evidencepub.io
+  thebe:
+    binder:
+      repo: qMRLab/VENUS
+      ref: main
+      url: https://terrarium.evidencepub.io
   banner: banner.jpg
   venue: Neurolibre #Production will override this.
   subject: Living Preprint # Production will override this.
