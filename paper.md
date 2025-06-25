@@ -1,5 +1,21 @@
 ---
 title: Vendor-neutral sequences and their implications for the reproducibility of quantitative MRI
+tags:
+  - reproducible publishing
+  - interactive articles
+  - reproducible research
+  - open science
+  - open access
+authors:
+  - name: Agah Karakuzu
+    affiliation: "1, 2"
+affiliations:
+ - name: NeuroPoly Lab, Polytechnique Montreal, Montreal, QC, Canada
+   index: 1
+ - name: Montreal Heart Institute, Montreal, QC, Canada
+   index: 2
+date: 17 June 2025
+bibliography: paper.bib
 ---
 
 # Abstract
