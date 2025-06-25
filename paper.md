@@ -70,13 +70,13 @@ To test this, we developed a vendor-neutral 3D-SPGR sequence, then compared meas
 :::
 ::::
 
-## The answer is yes!
+## The promise of vendor neutrality
 
 Our results show that VENUS can **significantly** decrease inter-vendor variability of `T1`, `MTR` and `MTsat`.
 
 ::::{admonition} Implications
 
-VENUS approach to qMRI has several implications for qMRI research and for the reliability of multicenter clinical trials. 
+The VENUS approach to qMRI offers significant benefits for qMRI research, as well as for the reliability of multicenter clinical trials. This approach has been pivotal in advancing "MRI metrology" efforts  [](https://doi.org/10.1259/bjr.20201215), emphasizing the importance of fully reproducible measurement pipelines as a crucial asset in the field [](https://doi.org/10.1007/s10334-025-01245-3).
 
 **This Jupyter Book supports that by highlighting the core idea of VENUS:**
 
@@ -408,7 +408,7 @@ You can start an interactive BinderHub session to explore VENUS (red) vs NATIVE 
     * `S2`
 :::
 
-:::{figure} #shiftcell
+:::{figure} #shiftexample
 
 VENUS vs NATIVE comparision of MTsat values from Participant 3 for Siemens (S1) and GE (G1) scanners.
 :::
