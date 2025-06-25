@@ -97,9 +97,15 @@ project:
     - file: paper.md
     - file: notebooks/invivo_python.ipynb
     - file: notebooks/phantom_python.ipynb
+    - file: notebooks/invivo_Rstat.ipynb
   exclude:
     - README.md
   bibliography:
     - paper.bib
 site:
   template: article-theme
+  options:
+    favicon: favicon.ico
+    logo: assets/venus_logo.png
+    logo_text: VENUS
+    twitter: qmrlab

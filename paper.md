@@ -1,6 +1,3 @@
----
-title: Anan
----
 
 # Abstract
 
@@ -11,7 +8,6 @@ This living preprint encapsulates the code, data and runtime (`R` and `Python`) 
 # Introduction
 
 :::{tip} Tip
-
 
 You can modify the code, and re-generate the outputs in your web browser without installing or downloading anything to your computer!
 
@@ -388,6 +384,87 @@ In our case, each between-scanner comparison comes from a repeated measurement, 
 For a more detailed explanation on shift functions, please see this [blog post](https://garstats.wordpress.com/2019/02/21/hsf/) by Guillaume A. Rousselet.
 :::
 ::::
+
+### Explore shift functions in pairs
+
+:::{tip} Interactive session
+
+You can start an interactive BinderHub session to explore VENUS (red) vs NATIVE (blue) shift functions side by side for a selected participant, metric and scanner pairs. 
+
+* Participants
+    * `sub-invivo1`
+    * `sub-invivo2`
+    * `sub-invivo3`    
+* Metrics
+    * `T1`
+    * `MTR`
+    * `MTsat`
+* Scanners
+    * `G1`
+    * `S1`
+    * `S2`
+:::
+
+:::{figure} #shiftcell
+
+VENUS vs NATIVE comparision of MTsat values from Participant 3 for Siemens (S1) and GE (G1) scanners.
+:::
+
+### Explore HSF plots
+
+:::{figure} assets/hsf_exp.jpg
+
+Explanation of the hierarchical shift function analysis.
+:::
+
+:::{tip} Interactive session
+
+You can start an interactive BinderHub session to explore VENUS (red) vs NATIVE (blue) HSF side by side for a selected metric and scanner pairs. 
+
+* Metrics
+    * `T1`
+    * `MTR`
+    * `MTsat`
+* Scanners
+    * `G1`
+    * `S1`
+    * `S2`
+
+In addition to the HSF plots, respective bootstrapped differences will also be displayed (second row).
+:::
+
+:::{figure} #hsfexample
+
+VENUS vs NATIVE comparision of MTsat values across participants for Siemens (S1) and GE (G1) scanners.
+:::
+
+### Significance test
+
+:::{admonition} Note
+
+The values are drawn from the `csv` files available at `.../qMRFlow/sub-invivo#/_SF_` to construct the data frame. 
+:::
+
+:::{figure} #pairedcomp
+
+Paired comparison of difference scores between VENUS and NATIVE implementations.
+:::
+
+:::{figure} #sigtest
+
+:::
+
+# Conclusion
+
+We conclude that vendor-neutral workflows are feasible and compatible with clinical MRI scanners. The significant reduction of inter-vendor variability using vendor-neutral sequences has important implications for qMRI research and for the reliability of multicenter clinical trials.
+
+:::{important} Peer reviewed article
+
+For further reading, please refer to the published version of this work.
+
+{button}`📄 VENUS article (MRM) <https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.29292>`
+
+:::
 
 # Acknowledgements
 
