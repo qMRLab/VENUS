@@ -35,7 +35,7 @@ bibliography: paper.bib
 
 # Abstract
 
-This living preprint [@karakuzu_nl;@harding2023canadian;@karakuzu25;@dupre2022beyond] encapsulates the code, data and runtime (`R` and `Python`) for an interative exploration of our findings from [@karakuzu2022vendor].
+This living preprint [@karakuzu_nl;@harding2023canadian;@karakuzu2025;@dupre2022beyond] encapsulates the code, data and runtime (`R` and `Python`) for an interative exploration of our findings from [@karakuzu2022vendor].
 
 # Background
 
@@ -53,4 +53,4 @@ In phantom experiments, the vendor-neutral sequence substantially minimized inte
 
 # Conclusion
 
-Our results show that vendor-neutral imaging protocols can be implemented effectively on standard clinical MRI systems. By significantly decreasing inter-vendor variability, these protocols offer a promising path toward more reproducible qMRI and more consistent outcomes in multicenter clinical research.
+Our findings demonstrate that vendor-neutral imaging protocols are readily deployable on conventional clinical MRI systems. Through substantial reduction of inter-vendor variability, these transparent and reproducible measurement frameworks provide a viable pathway toward enhanced qMRI reliability and improved clinical outcomes in multicenter research settings.
