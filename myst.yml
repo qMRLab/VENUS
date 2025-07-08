@@ -100,7 +100,7 @@ project:
     ISMRM: International Society for Magnetic Resonance in Medicine
     NIST: National Institute of Standards and Technology
   toc:
-    - file: paper.md
+    - file: index.md
     - file: notebooks/invivo_python.ipynb
     - file: notebooks/phantom_python.ipynb
     - file: notebooks/invivo_Rstat.ipynb
