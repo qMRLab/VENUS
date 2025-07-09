@@ -1,0 +1,35 @@
+cff-version: "1.2.0"
+authors:
+- family-names: Karakuzu
+  given-names: Agah
+- family-names: Biswas
+  given-names: Labonny
+- family-names: Cohen-Adad
+  given-names: Julien
+- family-names: Stikov
+  given-names: Nikola
+doi: 10.55458
+message: To reference this work, please cite our reproducible preprint
+  in NeuroLibre.
+preferred-citation:
+  authors:
+  - family-names: Karakuzu
+    given-names: Agah
+  - family-names: Biswas
+    given-names: Labonny
+  - family-names: Cohen-Adad
+    given-names: Julien
+  - family-names: Stikov
+    given-names: Nikola
+  date-published: 2025-07-09
+  doi: 10.55458/neurolibre.00027
+  journal: NeuroLibre Reproducible Preprints
+  publisher:
+    name: NeuroLibre
+  start: 27
+  title: Vendor-neutral sequences and their implications for the
+    reproducibility of quantitative MRI
+  type: preprint
+  url: "https://neurolibre.org/papers/10.55458/neurolibre.00027"
+title: Vendor-neutral sequences and their implications for the
+  reproducibility of quantitative MRI
